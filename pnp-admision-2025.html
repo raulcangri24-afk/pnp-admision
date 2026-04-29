@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Consulta el Cuadro de Mérito Final del Proceso de Admisión 2025 a la Escuela de Oficiales de la PNP — Promoción 2026. Plataforma informativa no oficial.">
+<title>PNP 2025 — Cuadro de Mérito | Promoción 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#080c18;--bg2:#0d1426;--bg3:#111d35;
+  --surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.07);
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --blue:#1e40af;--blue2:#3b82f6;--blue3:#60a5fa;
+  --gold:#f59e0b;--gold2:#fbbf24;
+  --green:#10b981;--green2:#34d399;
+  --red:#ef4444;--text:#e2e8f0;--text2:#94a3b8;--text3:#64748b;
+  --shadow:0 8px 32px rgba(0,0,0,0.6);--shadow2:0 2px 8px rgba(0,0,0,0.4);
+  --header1:#060a14;--header2:#0c1a38;
+  --radius:12px;--radius2:8px;
+  --transition:all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+html.light {
+  --bg:#f1f5fb;--bg2:#e8edf8;--bg3:#dde4f2;
+  --surface:rgba(255,255,255,0.85);--surface2:rgba(255,255,255,0.95);
+  --border:rgba(0,0,0,0.07);--border2:rgba(0,0,0,0.14);
+  --blue:#1d4ed8;--blue2:#2563eb;--blue3:#1d4ed8;
+  --gold:#d97706;--gold2:#b45309;
+  --green:#059669;--green2:#047857;
+  --text:#0f172a;--text2:#475569;--text3:#94a3b8;
+  --shadow:0 8px 32px rgba(0,0,0,0.12);--shadow2:0 2px 8px rgba(0,0,0,0.06);
+  --header1:#1e3a8a;--header2:#1e40af;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;transition:background 0.4s,color 0.4s;line-height:1.6}
+button{font-family:inherit;cursor:pointer;border:none}
+input,select{font-family:inherit}
+a{color:var(--blue2)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+/* =========================================================
+   MODAL DE AVISO INICIAL
+   ========================================================= */
+#welcomeModal {
+  position:fixed;inset:0;z-index:9999;
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  background:rgba(0,0,0,0.88);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  animation:fadeIn 0.4s ease;
+}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.welcome-card {
+  background:var(--bg2);border:1px solid var(--border2);
+  border-radius:20px;width:100%;max-width:560px;
+  box-shadow:0 32px 80px rgba(0,0,0,0.7);
+  overflow:hidden;
+  animation:slideUp 0.45s cubic-bezier(0.34,1.56,.64,1);
+}
+html.light .welcome-card{background:#fff}
+@keyframes slideUp{from{transform:translateY(30px) scale(0.95);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
+.welcome-top-bar{height:5px;background:linear-gradient(90deg,#ef4444,#f59e0b,#3b82f6)}
+.welcome-body{padding:36px 32px 28px}
+.welcome-icon{font-size:52px;text-align:center;margin-bottom:16px;display:block;animation:bounce 1s ease 0.5s}
+@keyframes bounce{0%,100%{transform:translateY(0)}40%{transform:translateY(-10px)}60%{transform:translateY(-5px)}}
+.welcome-title{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:1px;color:#fff;text-align:center;margin-bottom:8px}
+html.light .welcome-title{color:var(--text)}
+.welcome-subtitle{font-size:12px;text-align:center;color:var(--text2);letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;font-family:'JetBrains Mono',monospace}
+.welcome-alert {
+  background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);
+  border-radius:var(--radius2);padding:16px;margin-bottom:20px;
+}
+.welcome-alert-title{font-size:13px;font-weight:700;color:#f87171;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.welcome-alert-text{font-size:12.5px;color:var(--text2);line-height:1.7}
+.welcome-alert-text strong{color:var(--text)}
+.welcome-info-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
+.wi-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius2);padding:12px;text-align:center}
+html.light .wi-item{background:rgba(0,0,0,0.03)}
+.wi-icon{font-size:20px;margin-bottom:4px}
+.wi-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;font-weight:600}
+.wi-value{font-size:13px;font-weight:700;color:var(--text);margin-top:2px}
+.welcome-official{
+  background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);
+  border-radius:var(--radius2);padding:12px 14px;margin-bottom:22px;
+  display:flex;align-items:center;gap:10px;font-size:12px;
+}
+.welcome-official a{color:var(--blue3);font-weight:600;text-decoration:none;word-break:break-all}
+.welcome-official a:hover{text-decoration:underline}
+.welcome-actions{display:flex;flex-direction:column;gap:10px}
+.btn-continue{
+  background:linear-gradient(135deg,var(--blue2),var(--blue));
+  color:#fff;padding:14px 24px;border-radius:var(--radius2);
+  font-size:14px;font-weight:700;letter-spacing:0.5px;
+  transition:var(--transition);width:100%;
+  box-shadow:0 4px 20px rgba(59,130,246,0.4);
+}
+.btn-continue:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(59,130,246,0.55)}
+.btn-official-link{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:rgba(255,255,255,0.05);border:1px solid var(--border2);
+  color:var(--text2);padding:11px 24px;border-radius:var(--radius2);
+  font-size:13px;font-weight:600;transition:var(--transition);
+  text-decoration:none;width:100%;
+}
+html.light .btn-official-link{background:rgba(0,0,0,0.04);color:var(--text2);border-color:var(--border)}
+.btn-official-link:hover{background:rgba(255,255,255,0.1);color:var(--text)}
+.welcome-disclaimer{font-size:10.5px;color:var(--text3);text-align:center;margin-top:14px;line-height:1.6}
+
+/* =========================================================
+   NAVEGACIÓN POR SECCIONES (TABS)
+   ========================================================= */
+.section-nav {
+  background:var(--bg2);border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:50;
+  transition:background 0.4s;
+}
+.section-nav-inner{
+  max-width:1440px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;gap:0;overflow-x:auto;
+  scrollbar-width:none;
+}
+.section-nav-inner::-webkit-scrollbar{display:none}
+.nav-tab{
+  padding:14px 20px;font-size:13px;font-weight:600;
+  color:var(--text2);border:none;background:none;
+  border-bottom:3px solid transparent;white-space:nowrap;
+  transition:var(--transition);cursor:pointer;
+  display:flex;align-items:center;gap:7px;
+}
+.nav-tab:hover{color:var(--text)}
+.nav-tab.active{color:var(--blue2);border-bottom-color:var(--blue2)}
+.nav-tab .tab-num{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:20px;padding:1px 8px;font-size:10px;
+  font-family:'JetBrains Mono',monospace;color:var(--text3);
+}
+.nav-tab.active .tab-num{background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3);color:var(--blue3)}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+header{
+  background:linear-gradient(135deg,var(--header1) 0%,var(--header2) 60%,var(--header1) 100%);
+  border-bottom:1px solid var(--border);padding:28px 24px;
+  position:relative;overflow:hidden;transition:background 0.4s;
+}
+header::before{content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,0.015) 40px),
+              repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,0.015) 40px);
+  pointer-events:none}
+header::after{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;
+  background:radial-gradient(circle,rgba(59,130,246,0.2) 0%,transparent 70%);pointer-events:none}
+.header-inner{max-width:1440px;margin:0 auto;position:relative;z-index:1;
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.escudo{width:62px;height:62px;background:linear-gradient(135deg,var(--gold) 0%,#d97706 100%);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:26px;box-shadow:0 0 28px rgba(245,158,11,0.5),0 4px 12px rgba(0,0,0,0.4);
+  flex-shrink:0;animation:glowPulse 3s ease-in-out infinite}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 28px rgba(245,158,11,0.5),0 4px 12px rgba(0,0,0,0.4)}
+  50%{box-shadow:0 0 44px rgba(245,158,11,0.7),0 4px 16px rgba(0,0,0,0.5)}}
+.header-eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:3px;
+  color:var(--gold2);text-transform:uppercase;margin-bottom:4px}
+.header-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,4vw,48px);
+  letter-spacing:2px;line-height:1;color:#fff}
+.header-sub{font-size:12px;color:rgba(255,255,255,0.6);margin-top:4px}
+.header-actions{margin-left:auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:9px 16px;
+  border-radius:var(--radius2);font-size:12.5px;font-weight:600;
+  letter-spacing:0.3px;transition:var(--transition);text-decoration:none;white-space:nowrap}
+.btn-primary{background:var(--blue2);color:#fff;box-shadow:0 2px 12px rgba(59,130,246,0.35)}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(59,130,246,0.5)}
+.btn-outline{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.15)}
+html.light .btn-outline{background:rgba(0,0,0,0.05);color:var(--text);border-color:var(--border2)}
+.btn-outline:hover{background:rgba(255,255,255,0.15)}
+.btn-green{background:linear-gradient(135deg,var(--green),#047857);color:#fff;box-shadow:0 2px 12px rgba(16,185,129,0.3)}
+.btn-green:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(16,185,129,0.45)}
+.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a0a00;font-weight:700;box-shadow:0 2px 12px rgba(245,158,11,0.35)}
+.btn-gold:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(245,158,11,0.5)}
+
+/* STATS */
+.stats-bar{max-width:1440px;margin:18px auto 0;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;position:relative;z-index:1}
+.stat-pill{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  border-radius:var(--radius2);padding:12px 14px;text-align:center;transition:var(--transition)}
+html.light .stat-pill{background:rgba(255,255,255,0.7);border-color:var(--border)}
+.stat-pill:hover{background:rgba(255,255,255,0.1);transform:translateY(-2px)}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--gold2);line-height:1}
+.stat-lbl{font-size:10px;color:rgba(255,255,255,0.55);margin-top:2px;letter-spacing:0.3px}
+html.light .stat-lbl{color:var(--text2)}
+
+/* =========================================================
+   SECCIONES
+   ========================================================= */
+.section-page{display:none;max-width:1440px;margin:0 auto;padding:28px 24px 60px}
+.section-page.active{display:block}
+
+/* --- SECCIÓN 1: ANÁLISIS --- */
+.insights-header{text-align:center;margin-bottom:28px}
+.insights-header h2{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;color:var(--text);margin-bottom:6px}
+.insights-header p{color:var(--text2);font-size:13px}
+.panel-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--blue3);
+  margin-bottom:14px;display:flex;align-items:center;gap:8px;font-weight:600}
+.pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--blue2);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.7)}}
+.insights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:28px}
+.insight-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius2);
+  padding:16px;transition:var(--transition)}
+html.light .insight-card{background:rgba(255,255,255,0.7)}
+.insight-card:hover{background:var(--surface2);transform:translateY(-3px);box-shadow:var(--shadow2)}
+.insight-label{font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;font-weight:600}
+.insight-value{font-size:20px;font-weight:700;color:var(--text)}
+.insight-sub{font-size:11px;color:var(--text3);margin-top:3px}
+
+/* Stat big cards */
+.big-stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:28px}
+.big-stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:20px 24px;transition:var(--transition);position:relative;overflow:hidden}
+html.light .big-stat-card{background:rgba(255,255,255,0.8)}
+.big-stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.big-stat-card.blue::before{background:var(--blue2)}
+.big-stat-card.green::before{background:var(--green)}
+.big-stat-card.gold::before{background:var(--gold)}
+.big-stat-card.pink::before{background:#ec4899}
+.bsc-label{font-size:11px;color:var(--text2);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:8px}
+.bsc-value{font-family:'Bebas Neue',sans-serif;font-size:48px;line-height:1;margin-bottom:4px}
+.bsc-sub{font-size:12px;color:var(--text3)}
+.big-stat-card.blue .bsc-value{color:var(--blue3)}
+.big-stat-card.green .bsc-value{color:var(--green2)}
+.big-stat-card.gold .bsc-value{color:var(--gold2)}
+.big-stat-card.pink .bsc-value{color:#f9a8d4}
+
+/* --- SECCIÓN 2: GRÁFICAS --- */
+.charts-header{text-align:center;margin-bottom:28px}
+.charts-header h2{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;color:var(--text);margin-bottom:6px}
+.charts-header p{color:var(--text2);font-size:13px}
+.charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px}
+@media(max-width:820px){.charts-grid{grid-template-columns:1fr}}
+.chart-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:background 0.4s,border-color 0.4s}
+.chart-card-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;color:var(--text);margin-bottom:4px}
+.chart-card-sub{font-size:11px;color:var(--text2);margin-bottom:18px}
+.chart-full{grid-column:1/-1}
+.top-ranking{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-top:8px}
+.top-ranking-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;color:var(--text);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.top-item{display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid var(--border)}
+.top-item:last-child{border-bottom:none}
+.top-pos{font-family:'Bebas Neue',sans-serif;font-size:20px;min-width:36px;text-align:center}
+.top-pos.p1{color:var(--gold2)}
+.top-pos.p2{color:#94a3b8}
+.top-pos.p3{color:#cd7c3c}
+.top-name{flex:1;font-size:13px;font-weight:600}
+.top-meta{font-size:11px;color:var(--text2);margin-top:1px}
+.top-score{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;color:var(--gold2)}
+
+/* --- SECCIÓN 3: TABLA --- */
+.table-header-section{text-align:center;margin-bottom:24px}
+.table-header-section h2{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;color:var(--text);margin-bottom:6px}
+.table-header-section p{color:var(--text2);font-size:13px}
+.controls-bar{display:grid;grid-template-columns:1fr auto auto auto auto;gap:10px;margin-bottom:12px;align-items:center}
+@media(max-width:900px){.controls-bar{grid-template-columns:1fr 1fr}.search-wrap{grid-column:1/-1}}
+.search-wrap{position:relative}
+.search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:15px;pointer-events:none}
+.search-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);
+  background:none;border:none;color:var(--text3);font-size:16px;cursor:pointer;
+  opacity:0;transition:opacity 0.2s;width:24px;height:24px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center}
+.search-clear.visible{opacity:1}
+.search-clear:hover{background:rgba(255,255,255,0.1);color:var(--text)}
+input[type="text"],input[type="search"]{width:100%;background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius2);color:var(--text);font-size:13.5px;
+  padding:10px 36px 10px 38px;outline:none;transition:var(--transition)}
+input:focus{border-color:var(--blue2);box-shadow:0 0 0 3px rgba(59,130,246,0.15);background:var(--surface2)}
+.select-wrap{position:relative}
+.select-wrap::after{content:'▾';position:absolute;right:11px;top:50%;transform:translateY(-50%);
+  color:var(--text3);pointer-events:none;font-size:11px}
+select{width:100%;appearance:none;background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius2);color:var(--text);font-size:13px;
+  padding:10px 30px 10px 13px;outline:none;cursor:pointer;transition:var(--transition)}
+select:focus{border-color:var(--blue2);box-shadow:0 0 0 3px rgba(59,130,246,0.15)}
+select option{background:var(--bg2)}
+.chip-row{display:flex;gap:7px;margin-bottom:18px;flex-wrap:wrap}
+.chip{padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;
+  cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--text2);transition:var(--transition)}
+.chip:hover{background:var(--surface2);color:var(--text);border-color:var(--border2)}
+.chip.active{background:var(--blue);border-color:var(--blue2);color:#fff}
+.chip.active.green{background:var(--green);border-color:var(--green)}
+.chip.active.gold{background:#d97706;border-color:#d97706}
+
+.table-container{background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow2)}
+.table-toolbar{padding:14px 20px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.table-count{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text2)}
+.table-count strong{color:var(--gold2);font-size:14px}
+.export-bar{display:flex;align-items:center;gap:8px}
+.perpage-wrap{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--text2)}
+.perpage-wrap select{width:90px;padding:6px 26px 6px 10px}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{padding:11px 14px;text-align:left;font-family:'JetBrains Mono',monospace;
+  font-size:9.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--text2);
+  background:rgba(255,255,255,0.025);border-bottom:1px solid var(--border);
+  white-space:nowrap;cursor:pointer;user-select:none;transition:color 0.2s}
+html.light thead th{background:rgba(0,0,0,0.025)}
+thead th:hover{color:var(--text)}
+thead th .sort-icon{opacity:0.3;margin-left:4px;font-size:10px}
+thead th.sorted .sort-icon{opacity:1;color:var(--blue2)}
+tbody tr{border-bottom:1px solid var(--border);transition:background 0.15s;cursor:pointer;
+  animation:fadeRow 0.3s ease both}
+@keyframes fadeRow{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:var(--surface2)}
+tbody tr.top3{background:rgba(245,158,11,0.04)}
+tbody td{padding:12px 14px;vertical-align:middle}
+
+.rank{width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
+.rank-1{background:linear-gradient(135deg,#f59e0b,#d97706);color:#000;box-shadow:0 0 14px rgba(245,158,11,0.55);font-family:'Bebas Neue',sans-serif;font-size:16px}
+.rank-2{background:linear-gradient(135deg,#94a3b8,#64748b);color:#fff}
+.rank-3{background:linear-gradient(135deg,#cd7c3c,#a05c2c);color:#fff}
+.rank-n{background:rgba(255,255,255,0.06);color:var(--text3);font-family:'JetBrains Mono',monospace;font-size:11px}
+html.light .rank-n{background:rgba(0,0,0,0.06)}
+.name-main{font-weight:600;font-size:13px;line-height:1.3}
+.name-meta{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--text3);margin-top:2px}
+.badge{display:inline-flex;align-items:center;padding:3px 9px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase}
+.badge-os{background:rgba(29,78,216,0.2);color:#93c5fd;border:1px solid rgba(59,130,246,0.25)}
+.badge-ic{background:rgba(16,185,129,0.18);color:#6ee7b7;border:1px solid rgba(16,185,129,0.25)}
+html.light .badge-os{background:rgba(29,78,216,0.1);color:#1d4ed8}
+html.light .badge-ic{background:rgba(16,185,129,0.1);color:#047857}
+.badge-m{background:rgba(59,130,246,0.12);color:#93c5fd;padding:2px 7px;border-radius:4px;font-size:10px;font-family:'JetBrains Mono',monospace;font-weight:500}
+.badge-f{background:rgba(236,72,153,0.12);color:#f9a8d4;padding:2px 7px;border-radius:4px;font-size:10px;font-family:'JetBrains Mono',monospace;font-weight:500}
+html.light .badge-m{color:#1d4ed8}
+html.light .badge-f{color:#be185d}
+.score-bar-cell{display:flex;align-items:center;gap:10px;min-width:120px}
+.score-bar{flex:1;height:5px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;min-width:50px}
+html.light .score-bar{background:rgba(0,0,0,0.08)}
+.score-bar-fill{height:100%;border-radius:3px;transition:width 0.6s ease}
+.score-final{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;min-width:50px;text-align:right}
+.score-num{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--text2)}
+.benefit-tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--green2);font-weight:600}
+.no-benefit{color:rgba(255,255,255,0.15);font-size:13px}
+html.light .no-benefit{color:rgba(0,0,0,0.15)}
+
+.empty-state{text-align:center;padding:72px 24px;color:var(--text2)}
+.empty-icon{font-size:52px;margin-bottom:16px}
+.empty-title{font-size:17px;font-weight:600;color:var(--text);margin-bottom:8px}
+
+.skeleton-wrap{padding:8px 0}
+.skeleton-row{height:54px;border-radius:var(--radius2);margin:6px 16px;
+  background:linear-gradient(90deg,var(--surface) 25%,var(--surface2) 50%,var(--surface) 75%);
+  background-size:200% 100%;animation:shimmer 1.4s infinite}
+@keyframes shimmer{to{background-position:-200% 0}}
+
+.pagination{display:flex;align-items:center;justify-content:center;gap:5px;
+  padding:18px 20px;border-top:1px solid var(--border);flex-wrap:wrap}
+.pg-btn{min-width:36px;height:36px;padding:0 8px;border-radius:var(--radius2);
+  background:var(--surface);border:1px solid var(--border);color:var(--text2);
+  font-family:'JetBrains Mono',monospace;font-size:12.5px;transition:var(--transition);
+  display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.pg-btn:hover:not(:disabled){background:var(--surface2);color:var(--text)}
+.pg-btn.active{background:var(--blue2);border-color:var(--blue2);color:#fff;font-weight:700}
+.pg-btn:disabled{opacity:0.3;cursor:not-allowed}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.75);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  opacity:0;animation:fadeIn 0.25s ease forwards}
+.modal-card{background:var(--bg2);border:1px solid var(--border2);border-radius:16px;
+  width:100%;max-width:520px;box-shadow:0 24px 80px rgba(0,0,0,0.6);
+  transform:translateY(20px) scale(0.97);animation:slideUp2 0.3s cubic-bezier(0.34,1.56,.64,1) forwards;
+  position:relative;overflow:hidden}
+html.light .modal-card{background:#fff}
+@keyframes slideUp2{to{transform:translateY(0) scale(1)}}
+.modal-top-bar{height:4px;background:linear-gradient(90deg,var(--blue2),var(--green),var(--gold))}
+.modal-body{padding:28px}
+.modal-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;
+  background:rgba(255,255,255,0.08);color:var(--text2);font-size:16px;
+  display:flex;align-items:center;justify-content:center;transition:var(--transition);z-index:1}
+.modal-close:hover{background:rgba(239,68,68,0.25);color:#f87171}
+.modal-rank-bg{font-family:'Bebas Neue',sans-serif;font-size:64px;color:var(--gold2);
+  line-height:1;opacity:0.12;position:absolute;right:24px;top:28px}
+.modal-name{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:6px}
+.modal-meta-info{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text2);margin-bottom:20px}
+.modal-scores{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px}
+.msi{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius2);padding:14px;text-align:center}
+html.light .msi{background:var(--bg)}
+.msi-label{font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:var(--text2);margin-bottom:6px;font-weight:600}
+.msi-value{font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1}
+.msi-bar{height:4px;background:rgba(255,255,255,0.08);border-radius:2px;margin-top:8px;overflow:hidden}
+html.light .msi-bar{background:rgba(0,0,0,0.08)}
+.msi-bar-fill{height:100%;border-radius:2px}
+.modal-final-box{background:linear-gradient(135deg,rgba(29,78,216,0.15),rgba(16,185,129,0.1));
+  border:1px solid rgba(59,130,246,0.2);border-radius:var(--radius2);padding:16px;
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.mfb-label{font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:1px;font-weight:600;display:block;margin-bottom:3px}
+.mfb-score{font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1}
+.mfb-right{text-align:right}
+.mfb-pct-lbl{font-size:10px;color:var(--text2);margin-bottom:3px}
+.mfb-pct{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--green2)}
+.modal-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.modal-btn-row{display:flex;gap:8px}
+.modal-btn-row .btn{flex:1;justify-content:center}
+
+/* TOAST */
+#toastContainer{position:fixed;bottom:88px;right:24px;z-index:2000;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.toast{padding:11px 18px;border-radius:var(--radius2);font-size:13px;font-weight:500;
+  box-shadow:0 4px 16px rgba(0,0,0,0.35);
+  animation:toastIn 0.3s cubic-bezier(0.34,1.56,.64,1),toastOut 0.3s ease 2.6s forwards;max-width:280px}
+@keyframes toastIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes toastOut{from{opacity:1}to{opacity:0;transform:translateX(100%)}}
+.toast-success{background:#064e3b;border:1px solid var(--green);color:var(--green2)}
+.toast-info{background:#1e3a5f;border:1px solid var(--blue2);color:var(--blue3)}
+.toast-warning{background:#451a03;border:1px solid var(--gold);color:var(--gold2)}
+.toast-error{background:#4c0519;border:1px solid var(--red);color:#fca5a5}
+
+.theme-fab{position:fixed;bottom:28px;right:28px;z-index:999;width:50px;height:50px;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;
+  box-shadow:var(--shadow);transition:var(--transition);
+  background:linear-gradient(135deg,var(--blue2),var(--blue));color:#fff}
+html.light .theme-fab{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a0a00}
+.theme-fab:hover{transform:scale(1.1) rotate(12deg)}
+.theme-fab .icon-sun{display:none}
+.theme-fab .icon-moon{display:block}
+html.light .theme-fab .icon-sun{display:block}
+html.light .theme-fab .icon-moon{display:none}
+
+footer{text-align:center;padding:28px 24px;color:var(--text3);font-size:12px;
+  border-top:1px solid var(--border);line-height:1.8}
+footer a{color:var(--blue3);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+@media(max-width:640px){
+  thead{display:none}
+  tbody tr{display:block;margin:8px 12px;border:1px solid var(--border);border-radius:var(--radius2);padding:14px;background:var(--surface)}
+  tbody td{display:flex;align-items:center;padding:4px 0;border:none}
+  tbody td::before{content:attr(data-label);font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px;min-width:120px;flex-shrink:0}
+  tbody td:first-child::before{content:none}
+  .controls-bar{grid-template-columns:1fr}
+  .welcome-info-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     MODAL DE BIENVENIDA / AVISO
+     ========================================================= -->
+<div id="welcomeModal" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+  <div class="welcome-card">
+    <div class="welcome-top-bar"></div>
+    <div class="welcome-body">
+      <span class="welcome-icon" aria-hidden="true">⚖️</span>
+      <h1 class="welcome-title" id="welcomeTitle">Cuadro de Mérito PNP 2025</h1>
+      <div class="welcome-subtitle">Promoción 2026 · Escuela de Oficiales</div>
+
+      <div class="welcome-alert" role="alert">
+        <div class="welcome-alert-title">⚠️ Aviso Importante</div>
+        <div class="welcome-alert-text">
+          Esta plataforma es de carácter <strong>informativo y no oficial</strong>. 
+          Los datos fueron extraídos del PDF publicado por la Policía Nacional del Perú en su portal oficial del Estado Peruano.<br><br>
+          Para información oficial y definitiva, consulte siempre el portal del Gobierno del Perú.
+        </div>
+      </div>
+
+      <div class="welcome-info-row">
+        <div class="wi-item">
+          <div class="wi-icon">👤</div>
+          <div class="wi-label">Total Postulantes</div>
+          <div class="wi-value" id="wTotalPost">604</div>
+        </div>
+        <div class="wi-item">
+          <div class="wi-icon">🏆</div>
+          <div class="wi-label">Especialidades</div>
+          <div class="wi-value">2</div>
+        </div>
+        <div class="wi-item">
+          <div class="wi-icon">📅</div>
+          <div class="wi-label">Proceso</div>
+          <div class="wi-value">2025</div>
+        </div>
+        <div class="wi-item">
+          <div class="wi-icon">🎓</div>
+          <div class="wi-label">Promoción</div>
+          <div class="wi-value">2026</div>
+        </div>
+      </div>
+
+      <div class="welcome-official">
+        <span style="font-size:20px;flex-shrink:0">🔗</span>
+        <div>
+          <div style="font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;font-weight:600">Fuente Oficial — Gobierno del Perú</div>
+          <a href="https://www.gob.pe/institucion/pnp/informes-publicaciones/7552321-resultados-del-cuadro-de-merito-final-por-especialidades-del-proceso-de-admision-2025-promocion-2026-a-la-escuela-de-oficiales-de-la-policia-nacional-del-peru" target="_blank" rel="noopener noreferrer">
+            gob.pe — Resultados del Cuadro de Mérito Final PNP 2025 →
+          </a>
+        </div>
+      </div>
+
+      <div class="welcome-actions">
+        <button class="btn-continue" onclick="enterApp()" aria-label="Entrar a la plataforma de consulta">
+          ✓ Entendido — Ver Cuadro de Mérito
+        </button>
+        <a class="btn-official-link" href="https://www.gob.pe/institucion/pnp/informes-publicaciones/7552321-resultados-del-cuadro-de-merito-final-por-especialidades-del-proceso-de-admision-2025-promocion-2026-a-la-escuela-de-oficiales-de-la-policia-nacional-del-peru" target="_blank" rel="noopener noreferrer">
+          <span>🌐</span> Ir al Portal Oficial del Gobierno
+        </a>
+      </div>
+
+      <div class="welcome-disclaimer">
+        Al continuar, acepta que esta plataforma es informativa y no oficial.<br>
+        No tiene afiliación con la Policía Nacional del Perú ni el Estado Peruano.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     CONTENIDO PRINCIPAL (oculto hasta aceptar aviso)
+     ========================================================= -->
+<div id="appContent" style="display:none">
+
+<!-- HEADER -->
+<header role="banner">
+  <div class="header-inner">
+    <div class="escudo" aria-hidden="true">⚖️</div>
+    <div>
+      <div class="header-eyebrow">República del Perú · PNP · Proceso de Admisión 2025</div>
+      <h1 class="header-title">Cuadro de Mérito Final</h1>
+      <p class="header-sub">Promoción 2026 — Escuela de Oficiales de la Policía Nacional del Perú</p>
+    </div>
+    <div class="header-actions">
+      <a class="btn btn-outline" href="https://www.gob.pe/institucion/pnp/informes-publicaciones/7552321-resultados-del-cuadro-de-merito-final-por-especialidades-del-proceso-de-admision-2025-promocion-2026-a-la-escuela-de-oficiales-de-la-policia-nacional-del-peru" target="_blank" rel="noopener noreferrer">
+        <span>🔗</span> Fuente Oficial
+      </a>
+    </div>
+  </div>
+  <div class="stats-bar" id="statsBar"></div>
+</header>
+
+<!-- NAVEGACIÓN POR SECCIONES -->
+<nav class="section-nav" aria-label="Secciones de la plataforma">
+  <div class="section-nav-inner">
+    <button class="nav-tab active" data-section="s1" onclick="showSection('s1')">
+      📊 Análisis Estadístico <span class="tab-num">1</span>
+    </button>
+    <button class="nav-tab" data-section="s2" onclick="showSection('s2')">
+      📈 Gráficos y Rankings <span class="tab-num">2</span>
+    </button>
+    <button class="nav-tab" data-section="s3" onclick="showSection('s3')">
+      🔍 Consulta de Postulantes <span class="tab-num">3</span>
+    </button>
+  </div>
+</nav>
+
+<!-- =========================================================
+     SECCIÓN 1: ANÁLISIS ESTADÍSTICO
+     ========================================================= -->
+<section id="s1" class="section-page active" aria-labelledby="s1Title">
+  <div class="insights-header">
+    <h2 id="s1Title">Análisis Estadístico del Proceso</h2>
+    <p>Métricas clave del Proceso de Admisión 2025 — Promoción 2026</p>
+  </div>
+
+  <!-- Big stat cards -->
+  <div class="big-stat-grid" id="bigStatGrid"></div>
+
+  <!-- Detailed insights -->
+  <div class="panel-label">
+    <div class="pulse-dot"></div> Métricas Detalladas por Componente
+  </div>
+  <div class="insights-grid" id="insightsGrid"></div>
+
+  <div style="text-align:center;margin-top:8px">
+    <button class="btn btn-primary" onclick="showSection('s2')">Ver Gráficos y Rankings →</button>
+  </div>
+</section>
+
+<!-- =========================================================
+     SECCIÓN 2: GRÁFICAS Y RANKINGS
+     ========================================================= -->
+<section id="s2" class="section-page" aria-labelledby="s2Title">
+  <div class="charts-header">
+    <h2 id="s2Title">Distribución de Puntajes y Rankings</h2>
+    <p>Visualización estadística del proceso de admisión</p>
+  </div>
+
+  <div class="charts-grid">
+    <div class="chart-card">
+      <div class="chart-card-title">Distribución de Puntajes Finales</div>
+      <div class="chart-card-sub">Cantidad de postulantes por rango de puntaje</div>
+      <canvas id="chartDist" height="200"></canvas>
+    </div>
+    <div class="chart-card">
+      <div class="chart-card-title">Postulantes por Especialidad y Género</div>
+      <div class="chart-card-sub">Distribución entre Orden y Seguridad e Investigación Criminal</div>
+      <canvas id="chartEsp" height="200"></canvas>
+    </div>
+    <div class="chart-card chart-full">
+      <div class="chart-card-title">Promedios por Componente de Evaluación</div>
+      <div class="chart-card-sub">Comparación: Aptitud Física, Conocimientos y Entrevista</div>
+      <canvas id="chartComp" height="120"></canvas>
+    </div>
+  </div>
+
+  <!-- Top 10 ranking -->
+  <div class="top-ranking">
+    <div class="top-ranking-title">🏆 Top 10 del Ranking General</div>
+    <div id="top10List"></div>
+  </div>
+
+  <div style="text-align:center;margin-top:24px">
+    <button class="btn btn-primary" onclick="showSection('s3')">Ir a Consulta de Postulantes →</button>
+  </div>
+</section>
+
+<!-- =========================================================
+     SECCIÓN 3: TABLA DE CONSULTA
+     ========================================================= -->
+<section id="s3" class="section-page" aria-labelledby="s3Title">
+  <div class="table-header-section">
+    <h2 id="s3Title">Consulta de Postulantes</h2>
+    <p>Busca y filtra entre todos los postulantes del proceso de admisión 2025</p>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls-bar" role="search">
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <label for="searchInput" class="sr-only">Buscar postulante</label>
+      <input type="search" id="searchInput" placeholder="Buscar por nombre, DNI o N° Carnet…" autocomplete="off">
+      <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+    </div>
+    <div class="select-wrap">
+      <select id="filterEsp">
+        <option value="">Todas las especialidades</option>
+        <option value="ORDEN Y SEGURIDAD">Orden y Seguridad</option>
+        <option value="INVESTIGACIÓN CRIMINAL">Investigación Criminal</option>
+      </select>
+    </div>
+    <div class="select-wrap">
+      <select id="filterSex">
+        <option value="">Ambos sexos</option>
+        <option value="M">Varones</option>
+        <option value="F">Mujeres</option>
+      </select>
+    </div>
+    <div class="select-wrap">
+      <select id="filterBen">
+        <option value="">Con/Sin beneficio</option>
+        <option value="yes">Con beneficio</option>
+        <option value="no">Sin beneficio</option>
+      </select>
+    </div>
+    <div class="select-wrap">
+      <select id="filterPts">
+        <option value="">Todos los puntajes</option>
+        <option value="19">≥ 19 pts</option>
+        <option value="18">≥ 18 pts</option>
+        <option value="17">≥ 17 pts</option>
+        <option value="u16">< 16 pts</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="chip-row">
+    <button class="chip active" data-range="all">Todos</button>
+    <button class="chip" data-range="top10">Top 10</button>
+    <button class="chip" data-range="top50">Top 50</button>
+    <button class="chip green" data-range="18plus">≥ 18 pts</button>
+    <button class="chip" data-range="17to18">17–18 pts</button>
+    <button class="chip" data-range="below17">< 17 pts</button>
+  </div>
+
+  <!-- Table -->
+  <div class="table-container">
+    <div class="table-toolbar">
+      <div class="table-count" aria-live="polite" id="tableCount">
+        Mostrando <strong id="showingRange">—</strong> de <strong id="totalCount">—</strong> postulantes
+      </div>
+      <div class="export-bar">
+        <button class="btn btn-green" onclick="exportCSV()" title="Exportar tabla filtrada a CSV para Excel">
+          📊 Exportar CSV
+        </button>
+        <a class="btn btn-gold" href="https://www.gob.pe/institucion/pnp/informes-publicaciones/7552321-resultados-del-cuadro-de-merito-final-por-especialidades-del-proceso-de-admision-2025-promocion-2026-a-la-escuela-de-oficiales-de-la-policia-nacional-del-peru" target="_blank" rel="noopener noreferrer" title="Descargar PDF oficial del Gobierno del Perú">
+          📄 PDF Oficial
+        </a>
+        <div class="perpage-wrap">
+          Filas:
+          <div class="select-wrap">
+            <select id="perPageSel">
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20" selected>20</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="skeletonLoader" class="skeleton-wrap">
+      <div class="skeleton-row"></div>
+      <div class="skeleton-row" style="opacity:.7"></div>
+      <div class="skeleton-row" style="opacity:.5"></div>
+      <div class="skeleton-row" style="opacity:.3"></div>
+    </div>
+
+    <div class="table-scroll" style="display:none" id="tableWrap">
+      <table role="grid" aria-label="Postulantes PNP 2025">
+        <caption class="sr-only">Cuadro de Mérito Final — Promoción 2026</caption>
+        <thead>
+          <tr>
+            <th data-col="globalRank">Pos. <span class="sort-icon">↕</span></th>
+            <th data-col="nombre">Postulante <span class="sort-icon">↕</span></th>
+            <th data-col="sex">Sexo <span class="sort-icon">↕</span></th>
+            <th data-col="especialidad">Especialidad <span class="sort-icon">↕</span></th>
+            <th data-col="fisico">Físico <span class="sort-icon">↕</span></th>
+            <th data-col="conocimientos">Conoc. <span class="sort-icon">↕</span></th>
+            <th data-col="entrevista">Entrev. <span class="sort-icon">↕</span></th>
+            <th data-col="promedioParcial">Prom. Parcial <span class="sort-icon">↕</span></th>
+            <th data-col="beneficio">Beneficio <span class="sort-icon">↕</span></th>
+            <th data-col="promedioFinal" class="sorted">Prom. Final <span class="sort-icon">↓</span></th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <div id="emptyState" class="empty-state" style="display:none">
+      <div class="empty-icon">🔍</div>
+      <div class="empty-title">Sin resultados</div>
+      <div style="font-size:13px;color:var(--text3)">No se encontraron postulantes con esos criterios.</div>
+    </div>
+
+    <nav class="pagination" id="pagination" aria-label="Paginación"></nav>
+  </div>
+</section>
+
+</div><!-- /appContent -->
+
+<!-- TOAST -->
+<div id="toastContainer" aria-live="assertive"></div>
+
+<!-- THEME FAB -->
+<button class="theme-fab" onclick="toggleTheme()" aria-label="Cambiar tema">
+  <span class="icon-moon">🌙</span>
+  <span class="icon-sun">☀️</span>
+</button>
+
+<!-- MODAL DETALLE -->
+<div id="modalContainer"></div>
+
+<footer>
+  <p>Datos extraídos del documento oficial publicado por la <strong>Policía Nacional del Perú</strong>.</p>
+  <p>⚠️ Esta plataforma es <strong>informativa y no oficial</strong>. Para información definitiva consulte el 
+  <a href="https://www.gob.pe/institucion/pnp/informes-publicaciones/7552321-resultados-del-cuadro-de-merito-final-por-especialidades-del-proceso-de-admision-2025-promocion-2026-a-la-escuela-de-oficiales-de-la-policia-nacional-del-peru" target="_blank" rel="noopener">portal oficial del Gobierno del Perú</a>.</p>
+  <p style="margin-top:8px;color:var(--text3)">Proceso de Admisión 2025 · Promoción 2026 · Escuela de Oficiales PNP</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+'use strict';
+
+// ============================================================
+// DATA
+// ============================================================
+const RAW = [
+  // VARONES — ORDEN Y SEGURIDAD
+  {carnet:"11667",dni:"76010244",nombre:"CAJUSOL RIMARACHIN ANTHONY YOEL",sex:"M",fisico:18,conocimientos:16,entrevista:15,promedioParcial:16.500,beneficio:3.300,promedioFinal:19.800,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10056",dni:"72014364",nombre:"ALVAREZ XAMORA VICTOR MANUEL",sex:"M",fisico:18.25,conocimientos:16.2,entrevista:14,promedioParcial:16.419,beneficio:3.284,promedioFinal:19.703,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10009",dni:"73173967",nombre:"OLIVAR ALCALA PIERO BERNARDO",sex:"M",fisico:18.75,conocimientos:15,entrevista:15,promedioParcial:16.406,beneficio:3.281,promedioFinal:19.688,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10538",dni:"74943537",nombre:"GARCIA AGUILAR YHORDAN HELDER",sex:"M",fisico:18.75,conocimientos:14.6,entrevista:15,promedioParcial:16.256,beneficio:3.251,promedioFinal:19.508,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10437",dni:"71904393",nombre:"ALIAGA APUMAYTA JUAN CARLOS JOSE",sex:"M",fisico:20,conocimientos:16,entrevista:11,promedioParcial:16.250,beneficio:3.250,promedioFinal:19.500,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11725",dni:"74028247",nombre:"CRUZ VERA JHON DUAYER",sex:"M",fisico:18.75,conocimientos:15,entrevista:14,promedioParcial:16.156,beneficio:3.231,promedioFinal:19.388,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11002",dni:"75061438",nombre:"YPANAQUE ATOCHE KEVIN IMANOL",sex:"M",fisico:20,conocimientos:14.8,entrevista:12,promedioParcial:16.050,beneficio:3.210,promedioFinal:19.260,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11292",dni:"61253622",nombre:"SANTOS CORDOVA PABLO JEFFERSON",sex:"M",fisico:19.5,conocimientos:15.6,entrevista:16,promedioParcial:17.163,beneficio:2.000,promedioFinal:19.163,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11156",dni:"75434359",nombre:"RUIZ ROJAS FERNANDO JOSE",sex:"M",fisico:18.25,conocimientos:15,entrevista:14,promedioParcial:15.969,beneficio:3.194,promedioFinal:19.163,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13196",dni:"74805341",nombre:"DE LA CRUZ SUCÑO JEAN MARCO",sex:"M",fisico:20,conocimientos:16,entrevista:14,promedioParcial:17.000,beneficio:2.000,promedioFinal:19.000,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13440",dni:"75109250",nombre:"CONTRERAS GARCIA WILL NELSON",sex:"M",fisico:20,conocimientos:16,entrevista:14,promedioParcial:17.000,beneficio:2.000,promedioFinal:19.000,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11016",dni:"76530187",nombre:"QUISPE GUTIERREZ FRANCO LUIS",sex:"M",fisico:18.75,conocimientos:14.8,entrevista:13,promedioParcial:15.831,beneficio:3.166,promedioFinal:18.998,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11981",dni:"73107758",nombre:"RAFAEL VILLANUEVA ALESSANDRO JACEF",sex:"M",fisico:20,conocimientos:16,entrevista:15,promedioParcial:17.250,beneficio:1.725,promedioFinal:18.975,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13125",dni:"76020845",nombre:"TARRILLO CONDOR NEYBER JHEFERSON",sex:"M",fisico:19.25,conocimientos:16,entrevista:15,promedioParcial:16.969,beneficio:2.000,promedioFinal:18.969,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11673",dni:"70483143",nombre:"RAMIREZ LAURI NICOLAS DAVID",sex:"M",fisico:20,conocimientos:15,entrevista:16,promedioParcial:17.125,beneficio:1.713,promedioFinal:18.838,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13680",dni:"76797142",nombre:"VILCA FLORES EDY RONY",sex:"M",fisico:19.5,conocimientos:16,entrevista:14,promedioParcial:16.813,beneficio:2.000,promedioFinal:18.813,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12071",dni:"75925309",nombre:"LIPA CONDORI EDWIN",sex:"M",fisico:20,conocimientos:16.2,entrevista:14,promedioParcial:17.075,beneficio:1.708,promedioFinal:18.783,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10809",dni:"74220363",nombre:"CAYOTOPA VASQUEZ ELFER",sex:"M",fisico:17.5,conocimientos:14.8,entrevista:14,promedioParcial:15.613,beneficio:3.123,promedioFinal:18.735,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13165",dni:"77016102",nombre:"MONSEFU VEGA JERZY BRANCKO",sex:"M",fisico:19,conocimientos:16,entrevista:14,promedioParcial:16.625,beneficio:2.000,promedioFinal:18.625,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10655",dni:"71441382",nombre:"CULQUI ILMAN PAULO RODRIGO",sex:"M",fisico:15.25,conocimientos:16,entrevista:15,promedioParcial:15.469,beneficio:3.094,promedioFinal:18.563,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13425",dni:"72558934",nombre:"VERAMENDI FRANCISCO RONALDO RONY",sex:"M",fisico:18.5,conocimientos:15,entrevista:16,promedioParcial:16.563,beneficio:2.000,promedioFinal:18.563,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11649",dni:"76349661",nombre:"FLORES TAPIA MILTON",sex:"M",fisico:18.5,conocimientos:14.6,entrevista:12,promedioParcial:15.413,beneficio:3.083,promedioFinal:18.495,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12198",dni:"72499572",nombre:"PAITAN SULLCA RONY BRYAN",sex:"M",fisico:18.5,conocimientos:14.6,entrevista:12,promedioParcial:15.413,beneficio:3.083,promedioFinal:18.495,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12823",dni:"70948970",nombre:"ACOSTA VEGA LUIS ANGEL",sex:"M",fisico:18.75,conocimientos:16,entrevista:15,promedioParcial:16.781,beneficio:1.678,promedioFinal:18.459,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11063",dni:"72419644",nombre:"RUIZ BUSTAMANTE JHENER IVAN",sex:"M",fisico:18.5,conocimientos:16,entrevista:14,promedioParcial:16.438,beneficio:2.000,promedioFinal:18.438,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13505",dni:"60831028",nombre:"CRUZ MEZA JORGE ARMANDO",sex:"M",fisico:18.5,conocimientos:16,entrevista:14,promedioParcial:16.438,beneficio:2.000,promedioFinal:18.438,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10206",dni:"74047272",nombre:"EDQUEN DIAZ JHEYSON",sex:"M",fisico:20,conocimientos:14.6,entrevista:15,promedioParcial:16.725,beneficio:1.673,promedioFinal:18.398,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11643",dni:"76311205",nombre:"CHUCO VENTURO ALBERTO ABRAHAN",sex:"M",fisico:19.5,conocimientos:14.8,entrevista:14,promedioParcial:16.363,beneficio:2.000,promedioFinal:18.363,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11425",dni:"74898558",nombre:"CONGORA MEZA VICTOR MANUEL",sex:"M",fisico:18,conocimientos:14.8,entrevista:12,promedioParcial:15.300,beneficio:3.060,promedioFinal:18.360,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12935",dni:"75531400",nombre:"SALDAÑA CANO ALEJANDRO SEBASTIAN",sex:"M",fisico:18.75,conocimientos:16.2,entrevista:13,promedioParcial:16.356,beneficio:2.000,promedioFinal:18.356,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10857",dni:"60918740",nombre:"CASTAÑEDA JULCA BRYAN RAFAEL",sex:"M",fisico:18,conocimientos:16.4,entrevista:15,promedioParcial:16.650,beneficio:1.665,promedioFinal:18.315,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13619",dni:"75831874",nombre:"CASTRO VERA FRANK ALEXANDER",sex:"M",fisico:20,conocimientos:14.8,entrevista:13,promedioParcial:16.300,beneficio:2.000,promedioFinal:18.300,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11840",dni:"75734261",nombre:"PAITAN CANTARO CHRISTIAN JESUS",sex:"M",fisico:17.75,conocimientos:14.8,entrevista:12,promedioParcial:15.206,beneficio:3.041,promedioFinal:18.248,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12024",dni:"75945115",nombre:"NUÑEZ FERNANDEZ JHON ANTONY",sex:"M",fisico:17.75,conocimientos:14.6,entrevista:12,promedioParcial:15.131,beneficio:3.026,promedioFinal:18.158,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13665",dni:"60200018",nombre:"LOAIZA SOTA RONALDO",sex:"M",fisico:18,conocimientos:16.4,entrevista:13,promedioParcial:16.150,beneficio:2.000,promedioFinal:18.150,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11713",dni:"61063688",nombre:"GALARZA PANCA JAMNEL AMNAKIN",sex:"M",fisico:20,conocimientos:14.6,entrevista:14,promedioParcial:16.475,beneficio:1.648,promedioFinal:18.123,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13535",dni:"74968045",nombre:"QUISPE PEREZ ENYELVER RENAN",sex:"M",fisico:19.25,conocimientos:15.6,entrevista:12,promedioParcial:16.069,beneficio:2.000,promedioFinal:18.069,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12017",dni:"71557918",nombre:"RAMOS QUIROZ ELVIS ABRAHAN",sex:"M",fisico:18,conocimientos:14.8,entrevista:11,promedioParcial:15.050,beneficio:3.010,promedioFinal:18.060,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13369",dni:"73636286",nombre:"COPAJA AGUILAR KEVIN JHOEL",sex:"M",fisico:16.75,conocimientos:14.6,entrevista:13,promedioParcial:15.006,beneficio:3.001,promedioFinal:18.008,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12573",dni:"70630837",nombre:"RIVERA RAMOS MARIO VALENTINO",sex:"M",fisico:18.5,conocimientos:14.8,entrevista:14,promedioParcial:15.988,beneficio:2.000,promedioFinal:17.988,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12771",dni:"72945228",nombre:"PORTALES AYQUIPA HENRY PATROCINIO",sex:"M",fisico:18,conocimientos:14.6,entrevista:11,promedioParcial:14.975,beneficio:2.995,promedioFinal:17.970,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11997",dni:"77414932",nombre:"BRAVO ROJAS JHALMAR FLORENTINO",sex:"M",fisico:17.75,conocimientos:14.8,entrevista:15,promedioParcial:15.956,beneficio:2.000,promedioFinal:17.956,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11716",dni:"71187472",nombre:"CHAPOÑAN PALACIOS PERCY AARON",sex:"M",fisico:19.25,conocimientos:14.8,entrevista:14,promedioParcial:16.269,beneficio:1.627,promedioFinal:17.896,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13719",dni:"75660545",nombre:"LOAYZA MARIN JORGE LUIS",sex:"M",fisico:18.25,conocimientos:14.8,entrevista:14,promedioParcial:15.894,beneficio:2.000,promedioFinal:17.894,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11517",dni:"75602710",nombre:"YANAPA HUACCA ANDERLICH WAISMAN",sex:"M",fisico:17.5,conocimientos:16.6,entrevista:12,promedioParcial:15.788,beneficio:2.000,promedioFinal:17.788,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13452",dni:"74979627",nombre:"CONSTANTINO CARMEN JULIO DANIEL",sex:"M",fisico:19.25,conocimientos:14.8,entrevista:12,promedioParcial:15.769,beneficio:2.000,promedioFinal:17.769,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10389",dni:"75226149",nombre:"ACUÑA PIÑAS ALEXANDER",sex:"M",fisico:20,conocimientos:16.4,entrevista:16,promedioParcial:17.650,beneficio:0,promedioFinal:17.650,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12583",dni:"75175802",nombre:"MENDOZA CORONADO DIEGO SAUL",sex:"M",fisico:16,conocimientos:16.4,entrevista:14,promedioParcial:15.650,beneficio:2.000,promedioFinal:17.650,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11363",dni:"75170556",nombre:"GIRALDO TINTAYA HERLAN FERNANDO",sex:"M",fisico:19.25,conocimientos:14.8,entrevista:13,promedioParcial:16.019,beneficio:1.602,promedioFinal:17.621,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11804",dni:"72762704",nombre:"GARCIA VARGAS ALEXANDER GUILLERMO",sex:"M",fisico:16.5,conocimientos:15.8,entrevista:14,promedioParcial:15.613,beneficio:2.000,promedioFinal:17.613,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13030",dni:"74933751",nombre:"PELAEZ HIDALGO AXEL JESUS VALENTINO",sex:"M",fisico:17.25,conocimientos:15,entrevista:14,promedioParcial:15.594,beneficio:2.000,promedioFinal:17.594,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10713",dni:"76353305",nombre:"LAVADO SANTOS MATIAS THOMAS",sex:"M",fisico:17.25,conocimientos:14.6,entrevista:16,promedioParcial:15.944,beneficio:1.594,promedioFinal:17.538,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12846",dni:"75482407",nombre:"SUXE ALARCON FRANKLIN JHAIR",sex:"M",fisico:17.5,conocimientos:14.6,entrevista:14,promedioParcial:15.538,beneficio:2.000,promedioFinal:17.538,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12476",dni:"72913765",nombre:"VENTURA PACHECO RAUL ANDRES",sex:"M",fisico:16.5,conocimientos:12.4,entrevista:15,promedioParcial:14.588,beneficio:2.918,promedioFinal:17.505,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10337",dni:"74245747",nombre:"INOÑAN DAMIAN ERICK JHONATAN",sex:"M",fisico:20,conocimientos:16,entrevista:16,promedioParcial:17.500,beneficio:0,promedioFinal:17.500,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10343",dni:"60409612",nombre:"CAMASCA HUANUCO SNAYDER EDWIN",sex:"M",fisico:20,conocimientos:16,entrevista:16,promedioParcial:17.500,beneficio:0,promedioFinal:17.500,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10387",dni:"60305209",nombre:"CARRANZA CABRERA ELMER JESUS",sex:"M",fisico:20,conocimientos:16,entrevista:16,promedioParcial:17.500,beneficio:0,promedioFinal:17.500,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10480",dni:"60305196",nombre:"SILVA DIAZ NEYDER YOMAR",sex:"M",fisico:18.25,conocimientos:14.8,entrevista:14,promedioParcial:15.894,beneficio:1.589,promedioFinal:17.483,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10405",dni:"60439789",nombre:"VERGARA GUARNIZ STEVEN ONELL",sex:"M",fisico:19.5,conocimientos:16.4,entrevista:16,promedioParcial:17.463,beneficio:0,promedioFinal:17.463,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13603",dni:"72640385",nombre:"SILVA FLORES JEAMPIER JOSKYN",sex:"M",fisico:15.75,conocimientos:16,entrevista:14,promedioParcial:15.406,beneficio:2.000,promedioFinal:17.406,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10912",dni:"60977354",nombre:"MEDINA SOTO CRISTHIAN ANDRES",sex:"M",fisico:17.5,conocimientos:16,entrevista:13,promedioParcial:15.813,beneficio:1.581,promedioFinal:17.394,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12072",dni:"76827723",nombre:"VARGAS SANGAY ISAAC",sex:"M",fisico:19.5,conocimientos:16.2,entrevista:16,promedioParcial:17.388,beneficio:0,promedioFinal:17.388,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13045",dni:"60262992",nombre:"MEDINA CALLE EDIL BRANLI",sex:"M",fisico:17.5,conocimientos:14.6,entrevista:15,promedioParcial:15.788,beneficio:1.579,promedioFinal:17.366,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13699",dni:"75226689",nombre:"EGUZQUIZA FLORES FRANDI FAVIAN",sex:"M",fisico:16,conocimientos:15.6,entrevista:14,promedioParcial:15.350,beneficio:2.000,promedioFinal:17.350,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10201",dni:"61057211",nombre:"QUISPE HUAMAN PIERHO ALESSANDRO",sex:"M",fisico:19.5,conocimientos:16,entrevista:16,promedioParcial:17.313,beneficio:0,promedioFinal:17.313,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10381",dni:"60037413",nombre:"ROMERO PAREDES JOSE ELGAR",sex:"M",fisico:19.5,conocimientos:16,entrevista:16,promedioParcial:17.313,beneficio:0,promedioFinal:17.313,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12927",dni:"76225896",nombre:"CAMPOS RIVAS ELIAS ARON",sex:"M",fisico:19.75,conocimientos:16.4,entrevista:15,promedioParcial:17.306,beneficio:0,promedioFinal:17.306,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12550",dni:"71202787",nombre:"LAZO BALTAZAR JUAN CARLOS",sex:"M",fisico:17.75,conocimientos:15,entrevista:12,promedioParcial:15.281,beneficio:2.000,promedioFinal:17.281,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10137",dni:"74456728",nombre:"PORTOCARRERO ORTIZ MARCO ANTONIO",sex:"M",fisico:19.75,conocimientos:15.6,entrevista:16,promedioParcial:17.256,beneficio:0,promedioFinal:17.256,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11381",dni:"60425817",nombre:"URIARTE CHAVEZ JHAN CARLOS",sex:"M",fisico:20,conocimientos:16,entrevista:15,promedioParcial:17.250,beneficio:0,promedioFinal:17.250,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12746",dni:"60995244",nombre:"FERNANDEZ QUISPE HAROLD SMITH",sex:"M",fisico:20,conocimientos:16,entrevista:15,promedioParcial:17.250,beneficio:0,promedioFinal:17.250,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13648",dni:"72930589",nombre:"CARBAJAL ESPINOZA MAXIMO LEONARDO",sex:"M",fisico:20,conocimientos:16,entrevista:15,promedioParcial:17.250,beneficio:0,promedioFinal:17.250,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10720",dni:"61592243",nombre:"TINTAYA MERMA JHON RIVALDIÑO",sex:"M",fisico:19.75,conocimientos:16.2,entrevista:15,promedioParcial:17.231,beneficio:0,promedioFinal:17.231,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10839",dni:"60567478",nombre:"BARRAZA CARRILLO FREDDY ORLANDO",sex:"M",fisico:19.75,conocimientos:16.2,entrevista:15,promedioParcial:17.231,beneficio:0,promedioFinal:17.231,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12089",dni:"61027904",nombre:"DUCEF REGALADO EDINSON ALDAIR",sex:"M",fisico:19.75,conocimientos:16.2,entrevista:15,promedioParcial:17.231,beneficio:0,promedioFinal:17.231,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13174",dni:"75173124",nombre:"CCAHUANA MOJONERO RONALDINO",sex:"M",fisico:18.25,conocimientos:15,entrevista:11,promedioParcial:15.219,beneficio:2.000,promedioFinal:17.219,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10025",dni:"73352170",nombre:"CONTRERAS ARTEAGA CARLOS NEYRO",sex:"M",fisico:19,conocimientos:16.2,entrevista:16,promedioParcial:17.200,beneficio:0,promedioFinal:17.200,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10382",dni:"60677757",nombre:"QUISPE GARCIA JESUS SALVADOR",sex:"M",fisico:19,conocimientos:16.2,entrevista:16,promedioParcial:17.200,beneficio:0,promedioFinal:17.200,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10384",dni:"60289942",nombre:"MONDRAGON CABANILLAS WALTER SMITH",sex:"M",fisico:19,conocimientos:16.2,entrevista:16,promedioParcial:17.200,beneficio:0,promedioFinal:17.200,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10549",dni:"61129726",nombre:"SANCHEZ SAENZ WALTHER JESUS",sex:"M",fisico:19,conocimientos:16.2,entrevista:16,promedioParcial:17.200,beneficio:0,promedioFinal:17.200,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10462",dni:"75748550",nombre:"CHANDUVI FERNANDEZ JAMPIER",sex:"M",fisico:20,conocimientos:15.8,entrevista:15,promedioParcial:17.175,beneficio:0,promedioFinal:17.175,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11694",dni:"60732872",nombre:"HUANCA AGUILAR CRISTIAN RONALD",sex:"M",fisico:20,conocimientos:15.8,entrevista:15,promedioParcial:17.175,beneficio:0,promedioFinal:17.175,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12633",dni:"71877862",nombre:"QUISPE GUERRA CRISTIAN OMAR",sex:"M",fisico:17,conocimientos:14.8,entrevista:13,promedioParcial:15.175,beneficio:2.000,promedioFinal:17.175,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12969",dni:"75093328",nombre:"FLORES CRUZ CARLOS MANUEL",sex:"M",fisico:16.25,conocimientos:16.2,entrevista:12,promedioParcial:15.169,beneficio:2.000,promedioFinal:17.169,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12677",dni:"62533564",nombre:"YESAN PRECIADO JOSUE ANDREE",sex:"M",fisico:19.75,conocimientos:16,entrevista:15,promedioParcial:17.156,beneficio:0,promedioFinal:17.156,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10736",dni:"71177097",nombre:"LLAMO VILLALOBOS GENDERSON",sex:"M",fisico:19.5,conocimientos:16.2,entrevista:15,promedioParcial:17.138,beneficio:0,promedioFinal:17.138,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13620",dni:"60867140",nombre:"CARPIO LLERENA ERICK PAUL",sex:"M",fisico:20,conocimientos:15,entrevista:16,promedioParcial:17.125,beneficio:0,promedioFinal:17.125,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11739",dni:"60431519",nombre:"LINARES GOÑAS CRISTIAN",sex:"M",fisico:20,conocimientos:16.2,entrevista:14,promedioParcial:17.075,beneficio:0,promedioFinal:17.075,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10664",dni:"60239495",nombre:"GARCIA ALARCON YELTSIN MESSI",sex:"M",fisico:18.75,conocimientos:14.6,entrevista:12,promedioParcial:15.506,beneficio:1.551,promedioFinal:17.057,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10786",dni:"61022623",nombre:"CHAVEZ SOLLIER JORGE ENRIQUE",sex:"M",fisico:20,conocimientos:14.8,entrevista:16,promedioParcial:17.050,beneficio:0,promedioFinal:17.050,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11510",dni:"74911435",nombre:"NOLASCO FERNANDEZ ROGER JUAN",sex:"M",fisico:19.5,conocimientos:16.6,entrevista:14,promedioParcial:17.038,beneficio:0,promedioFinal:17.038,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10401",dni:"60008823",nombre:"RIVERA LOPEZ LENNYN RENZO",sex:"M",fisico:18.75,conocimientos:16,entrevista:16,promedioParcial:17.031,beneficio:0,promedioFinal:17.031,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13549",dni:"74445052",nombre:"AYQUIPA RETAMOZO FELIX ANTONY",sex:"M",fisico:19.75,conocimientos:16.2,entrevista:14,promedioParcial:16.981,beneficio:0,promedioFinal:16.981,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10536",dni:"60488942",nombre:"DELGADO MEDINA ROYBER",sex:"M",fisico:19.75,conocimientos:14.8,entrevista:16,promedioParcial:16.956,beneficio:0,promedioFinal:16.956,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10861",dni:"61221301",nombre:"VASQUEZ MUNDACA MIGUEL ANGEL",sex:"M",fisico:19,conocimientos:16.2,entrevista:15,promedioParcial:16.950,beneficio:0,promedioFinal:16.950,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10338",dni:"60057699",nombre:"BALLADARES CORDOVA DEIVIS LEANDRO",sex:"M",fisico:19.5,conocimientos:15,entrevista:16,promedioParcial:16.938,beneficio:0,promedioFinal:16.938,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13168",dni:"71767164",nombre:"QUENTA CCALLE ERIK MAYCLEN",sex:"M",fisico:17,conocimientos:14.8,entrevista:12,promedioParcial:14.925,beneficio:2.000,promedioFinal:16.925,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11099",dni:"60307932",nombre:"HIDALGO VARGAS DANTE FABRITSIO",sex:"M",fisico:20,conocimientos:16.4,entrevista:13,promedioParcial:16.900,beneficio:0,promedioFinal:16.900,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11761",dni:"71822666",nombre:"CARRANZA TORRES HENRRY",sex:"M",fisico:20,conocimientos:16.4,entrevista:13,promedioParcial:16.900,beneficio:0,promedioFinal:16.900,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10037",dni:"60338048",nombre:"VASQUEZ HERNANDEZ CARLOS FAVIAN",sex:"M",fisico:20,conocimientos:15,entrevista:15,promedioParcial:16.875,beneficio:0,promedioFinal:16.875,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10262",dni:"60562864",nombre:"CARRERA VILCHEZ ALEXANDER",sex:"M",fisico:19.25,conocimientos:15,entrevista:16,promedioParcial:16.844,beneficio:0,promedioFinal:16.844,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13223",dni:"74649380",nombre:"DIAZ ESTELA ANIANO JHOSIMAR",sex:"M",fisico:19.25,conocimientos:15,entrevista:16,promedioParcial:16.844,beneficio:0,promedioFinal:16.844,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13610",dni:"61340830",nombre:"ASTORAYME ENRIQUE DIOGO FELIX",sex:"M",fisico:20,conocimientos:16.2,entrevista:13,promedioParcial:16.825,beneficio:0,promedioFinal:16.825,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10901",dni:"73863452",nombre:"QUISPE QUISPE MIJAEL JHAMES",sex:"M",fisico:17.75,conocimientos:16.4,entrevista:16,promedioParcial:16.806,beneficio:0,promedioFinal:16.806,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11579",dni:"74105172",nombre:"CABALLERO JUSTINIANO JESUS ENRIQUE",sex:"M",fisico:20,conocimientos:14.8,entrevista:15,promedioParcial:16.800,beneficio:0,promedioFinal:16.800,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11869",dni:"60776444",nombre:"MANCILLA BRAVO AXL ROBIN",sex:"M",fisico:20,conocimientos:14.8,entrevista:15,promedioParcial:16.800,beneficio:0,promedioFinal:16.800,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12143",dni:"60426048",nombre:"TARRILLO VASQUEZ YERSON",sex:"M",fisico:20,conocimientos:14.8,entrevista:15,promedioParcial:16.800,beneficio:0,promedioFinal:16.800,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11722",dni:"71031220",nombre:"MALDONADO MONSALVE HELDER",sex:"M",fisico:19.25,conocimientos:16.2,entrevista:14,promedioParcial:16.794,beneficio:0,promedioFinal:16.794,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10730",dni:"60977247",nombre:"CHIPAYO LIVANO SHANDE SAITH",sex:"M",fisico:19.5,conocimientos:14.6,entrevista:16,promedioParcial:16.788,beneficio:0,promedioFinal:16.788,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11873",dni:"60031965",nombre:"TAFUR CHAVEZ AYALEN",sex:"M",fisico:18.75,conocimientos:16,entrevista:15,promedioParcial:16.781,beneficio:0,promedioFinal:16.781,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10233",dni:"71314949",nombre:"BERNUY INFANTE MAX LEE",sex:"M",fisico:19.75,conocimientos:15,entrevista:15,promedioParcial:16.781,beneficio:0,promedioFinal:16.781,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13640",dni:"60829737",nombre:"ORTEGA PAULINO ALFRED JEAN PIERO",sex:"M",fisico:19.75,conocimientos:15,entrevista:15,promedioParcial:16.781,beneficio:0,promedioFinal:16.781,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11437",dni:"71183486",nombre:"ALMEIDA SALAS GABRIEL TEOFILO",sex:"M",fisico:16,conocimientos:16,entrevista:13,promedioParcial:15.250,beneficio:1.525,promedioFinal:16.775,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11702",dni:"70591428",nombre:"CABANILLAS AGUILAR PERCY DANIEL",sex:"M",fisico:20,conocimientos:14.6,entrevista:15,promedioParcial:16.725,beneficio:0,promedioFinal:16.725,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10422",dni:"70626616",nombre:"BAUTISTA GONZALES JHONATAN",sex:"M",fisico:18.75,conocimientos:15.8,entrevista:15,promedioParcial:16.706,beneficio:0,promedioFinal:16.706,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11218",dni:"75308096",nombre:"TORRES GARCIA MARIO JOSEPH",sex:"M",fisico:19,conocimientos:16.2,entrevista:14,promedioParcial:16.700,beneficio:0,promedioFinal:16.700,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11553",dni:"60316029",nombre:"MONTERO CUNYAS MARCO ANTONIO",sex:"M",fisico:19,conocimientos:16.2,entrevista:14,promedioParcial:16.700,beneficio:0,promedioFinal:16.700,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13321",dni:"60052966",nombre:"RODRIGO BURGA OSMER ALEXANDER",sex:"M",fisico:19,conocimientos:16.2,entrevista:14,promedioParcial:16.700,beneficio:0,promedioFinal:16.700,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10599",dni:"72108456",nombre:"LLANOS GARCIA DILMER",sex:"M",fisico:19.25,conocimientos:14.6,entrevista:16,promedioParcial:16.694,beneficio:0,promedioFinal:16.694,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11308",dni:"71682093",nombre:"POMA MERINO MATHIAS LUCIO",sex:"M",fisico:19.5,conocimientos:15,entrevista:15,promedioParcial:16.688,beneficio:0,promedioFinal:16.688,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11395",dni:"60918852",nombre:"FERNANDEZ GALVEZ MIGUEL ANGEL",sex:"M",fisico:19.5,conocimientos:15,entrevista:15,promedioParcial:16.688,beneficio:0,promedioFinal:16.688,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11020",dni:"76233501",nombre:"CORREA TALLEDO ALDO JAVIER",sex:"M",fisico:17.75,conocimientos:16.6,entrevista:15,promedioParcial:16.631,beneficio:0,promedioFinal:16.631,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11675",dni:"76780676",nombre:"DEL CARPIO ROSA CALI ANDERSON",sex:"M",fisico:19,conocimientos:16,entrevista:14,promedioParcial:16.625,beneficio:0,promedioFinal:16.625,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11483",dni:"71147100",nombre:"BUSTAMANTE BENITES JOSE JESUS",sex:"M",fisico:20,conocimientos:15,entrevista:14,promedioParcial:16.625,beneficio:0,promedioFinal:16.625,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12247",dni:"60482202",nombre:"ESPINOZA LEON FAUSTINO CESAR",sex:"M",fisico:20,conocimientos:15,entrevista:14,promedioParcial:16.625,beneficio:0,promedioFinal:16.625,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10057",dni:"61038757",nombre:"CHAVEZ MUÑOZ JOSE ANDRES",sex:"M",fisico:19.5,conocimientos:14.8,entrevista:15,promedioParcial:16.613,beneficio:0,promedioFinal:16.613,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11243",dni:"61287948",nombre:"GUANILO LAVADO BAYRON IVAN",sex:"M",fisico:19.5,conocimientos:14.8,entrevista:15,promedioParcial:16.613,beneficio:0,promedioFinal:16.613,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12832",dni:"74902840",nombre:"ROQUE LUQUE ALVARO PIERO",sex:"M",fisico:18.75,conocimientos:16.2,entrevista:14,promedioParcial:16.606,beneficio:0,promedioFinal:16.606,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13371",dni:"61529888",nombre:"CHAVEZ VASQUEZ JHORDAN ALEXANDER",sex:"M",fisico:18.75,conocimientos:16.2,entrevista:14,promedioParcial:16.606,beneficio:0,promedioFinal:16.606,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11714",dni:"60623607",nombre:"ZEVALLOS AMBICHO LEE JEAMPIER",sex:"M",fisico:19,conocimientos:14.6,entrevista:16,promedioParcial:16.600,beneficio:0,promedioFinal:16.600,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10088",dni:"72674790",nombre:"ALEJANDRO ROJAS LUIS ANGEL",sex:"M",fisico:18.25,conocimientos:16,entrevista:15,promedioParcial:16.594,beneficio:0,promedioFinal:16.594,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10238",dni:"60056556",nombre:"CALDERON GUERRERO ANDERSON",sex:"M",fisico:19.25,conocimientos:15,entrevista:15,promedioParcial:16.594,beneficio:0,promedioFinal:16.594,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10940",dni:"72900060",nombre:"ZAPATA CANDIA LUIS ENRIQUE",sex:"M",fisico:19.25,conocimientos:15,entrevista:15,promedioParcial:16.594,beneficio:0,promedioFinal:16.594,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12007",dni:"76063896",nombre:"CARRASCO QUISPE JORGE ENMANUELLE",sex:"M",fisico:19.25,conocimientos:15,entrevista:15,promedioParcial:16.594,beneficio:0,promedioFinal:16.594,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10023",dni:"70528395",nombre:"REINOSO VILLASANTE JAIR ISAMEL",sex:"M",fisico:18.25,conocimientos:16.6,entrevista:14,promedioParcial:16.569,beneficio:0,promedioFinal:16.569,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11385",dni:"61127449",nombre:"MUÑOZ MENDOZA EMERSON LORENZO",sex:"M",fisico:17,conocimientos:15.8,entrevista:11,promedioParcial:15.050,beneficio:1.505,promedioFinal:16.555,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10012",dni:"60099198",nombre:"TAPIA MONDRAGON JORGE WHASNER",sex:"M",fisico:20,conocimientos:14.8,entrevista:14,promedioParcial:16.550,beneficio:0,promedioFinal:16.550,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10263",dni:"60698646",nombre:"MORALES VILLANUEVA AXEL RAFAEL",sex:"M",fisico:20,conocimientos:14.8,entrevista:14,promedioParcial:16.550,beneficio:0,promedioFinal:16.550,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10319",dni:"60487540",nombre:"AVALOS MENDOZA JHON PERCY",sex:"M",fisico:20,conocimientos:14.8,entrevista:14,promedioParcial:16.550,beneficio:0,promedioFinal:16.550,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11136",dni:"60163015",nombre:"GALLO CASTILLO LEONARDO",sex:"M",fisico:19.75,conocimientos:15,entrevista:14,promedioParcial:16.531,beneficio:0,promedioFinal:16.531,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10629",dni:"60136054",nombre:"DAVILA SIFUENTES DEYVER",sex:"M",fisico:19.25,conocimientos:14.8,entrevista:15,promedioParcial:16.519,beneficio:0,promedioFinal:16.519,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11537",dni:"60442208",nombre:"ARTEAGA VILLANUEVA MICHAEL BALLAK",sex:"M",fisico:19.25,conocimientos:14.8,entrevista:15,promedioParcial:16.519,beneficio:0,promedioFinal:16.519,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12475",dni:"72140817",nombre:"GONZALEZ TIRADO JHEYSON VILI",sex:"M",fisico:19.25,conocimientos:14.8,entrevista:15,promedioParcial:16.519,beneficio:0,promedioFinal:16.519,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11520",dni:"70529349",nombre:"LOZANO CHAVEZ CESAR GENNARO",sex:"M",fisico:18.75,conocimientos:14.6,entrevista:16,promedioParcial:16.506,beneficio:0,promedioFinal:16.506,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10968",dni:"61085346",nombre:"MEDINA WALTER EDWIN IVAN",sex:"M",fisico:19,conocimientos:15,entrevista:15,promedioParcial:16.500,beneficio:0,promedioFinal:16.500,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11098",dni:"61126291",nombre:"SINCHE HIDALGO JHON DEYVI",sex:"M",fisico:20,conocimientos:14.6,entrevista:14,promedioParcial:16.475,beneficio:0,promedioFinal:16.475,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11626",dni:"60285351",nombre:"PEREZ JULCA ALEXSANDER",sex:"M",fisico:20,conocimientos:14.6,entrevista:14,promedioParcial:16.475,beneficio:0,promedioFinal:16.475,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12268",dni:"60753458",nombre:"SANTIAGO BARRETO BAYRON FERNANDO",sex:"M",fisico:20,conocimientos:14.6,entrevista:14,promedioParcial:16.475,beneficio:0,promedioFinal:16.475,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12733",dni:"72141995",nombre:"OYOLA CONZUELO ANTHONY YULLINO",sex:"M",fisico:20,conocimientos:14.6,entrevista:14,promedioParcial:16.475,beneficio:0,promedioFinal:16.475,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12426",dni:"61638172",nombre:"ACUÑA PAITAN RUBEN YASSE",sex:"M",fisico:19.25,conocimientos:16,entrevista:13,promedioParcial:16.469,beneficio:0,promedioFinal:16.469,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10152",dni:"76594672",nombre:"ÑAUPA AQUINO RODRIGO JEAN PIERRE",sex:"M",fisico:17.25,conocimientos:16,entrevista:16,promedioParcial:16.469,beneficio:0,promedioFinal:16.469,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10084",dni:"75924760",nombre:"UYEN ALVAREZ JUAN LARCEN FABRICIO",sex:"M",fisico:19.75,conocimientos:14.8,entrevista:14,promedioParcial:16.456,beneficio:0,promedioFinal:16.456,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11001",dni:"70452691",nombre:"CASTILLO PEREZ GONZALO MANUEL",sex:"M",fisico:19.75,conocimientos:14.8,entrevista:14,promedioParcial:16.456,beneficio:0,promedioFinal:16.456,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10140",dni:"75088247",nombre:"DIAZ SAUCEDO HARLIN ALEXIS",sex:"M",fisico:19.25,conocimientos:14.6,entrevista:15,promedioParcial:16.444,beneficio:0,promedioFinal:16.444,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11408",dni:"60425829",nombre:"CLAVO PEREZ ALEXANDER",sex:"M",fisico:19,conocimientos:14.8,entrevista:15,promedioParcial:16.425,beneficio:0,promedioFinal:16.425,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11500",dni:"60919167",nombre:"BENAVIDES BUSTAMANTE CESAR RONALD",sex:"M",fisico:19,conocimientos:14.8,entrevista:15,promedioParcial:16.425,beneficio:0,promedioFinal:16.425,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11575",dni:"60240132",nombre:"ROMERO PIZARRO EDU ALESSANDRO",sex:"M",fisico:17.75,conocimientos:16,entrevista:15,promedioParcial:16.406,beneficio:0,promedioFinal:16.406,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10127",dni:"49083318",nombre:"ZARAGOZA HUERTA JOEL ALEX",sex:"M",fisico:18.75,conocimientos:15,entrevista:15,promedioParcial:16.406,beneficio:0,promedioFinal:16.406,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10511",dni:"60304409",nombre:"TARRILLO CORONEL JHAN FRANKEL",sex:"M",fisico:20,conocimientos:16.4,entrevista:11,promedioParcial:16.400,beneficio:0,promedioFinal:16.400,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12018",dni:"75859572",nombre:"QUISPE PAREDES DANIEL ALCIDES",sex:"M",fisico:20,conocimientos:16.4,entrevista:11,promedioParcial:16.400,beneficio:0,promedioFinal:16.400,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10849",dni:"60480738",nombre:"SILVA PEREZ JARLIN YOEL",sex:"M",fisico:19,conocimientos:16,entrevista:13,promedioParcial:16.375,beneficio:0,promedioFinal:16.375,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11994",dni:"72067063",nombre:"NUÑEZ CASTAÑEDA DAYRON ENRIQUE",sex:"M",fisico:17,conocimientos:16,entrevista:16,promedioParcial:16.375,beneficio:0,promedioFinal:16.375,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11928",dni:"60515236",nombre:"PRETEL TISNADO JOSE GABRIEL",sex:"M",fisico:20,conocimientos:15,entrevista:13,promedioParcial:16.375,beneficio:0,promedioFinal:16.375,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10880",dni:"60303030",nombre:"MENOR VASQUEZ JEFER JAISON",sex:"M",fisico:19,conocimientos:14.6,entrevista:15,promedioParcial:16.350,beneficio:0,promedioFinal:16.350,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12712",dni:"76854980",nombre:"ROMERO LINARES ROLANDO",sex:"M",fisico:19,conocimientos:14.6,entrevista:15,promedioParcial:16.350,beneficio:0,promedioFinal:16.350,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10958",dni:"77405261",nombre:"NAVARRO ORTIZ ALFREDO",sex:"M",fisico:18.25,conocimientos:16,entrevista:14,promedioParcial:16.344,beneficio:0,promedioFinal:16.344,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12365",dni:"60184503",nombre:"DE LA CRUZ RAMOS MIGUEL ALY",sex:"M",fisico:18.25,conocimientos:16,entrevista:14,promedioParcial:16.344,beneficio:0,promedioFinal:16.344,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10177",dni:"76121435",nombre:"MANOSALVA VELASCO PAUL VIDAL",sex:"M",fisico:19.25,conocimientos:15,entrevista:14,promedioParcial:16.344,beneficio:0,promedioFinal:16.344,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12493",dni:"60853221",nombre:"RAMOS AGUIRRE JHOSEP STIVEN",sex:"M",fisico:19.25,conocimientos:15,entrevista:14,promedioParcial:16.344,beneficio:0,promedioFinal:16.344,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11039",dni:"61198939",nombre:"ALDAVE TORRES DANIEL FERNANDO",sex:"M",fisico:18.75,conocimientos:14.8,entrevista:15,promedioParcial:16.331,beneficio:0,promedioFinal:16.331,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12981",dni:"73932086",nombre:"OROPEZA ARGOMEDO EDU ALEX",sex:"M",fisico:20,conocimientos:16.2,entrevista:11,promedioParcial:16.325,beneficio:0,promedioFinal:16.325,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10554",dni:"75909749",nombre:"BARCO GARCIA RAUL EDISON",sex:"M",fisico:17.5,conocimientos:16,entrevista:15,promedioParcial:16.313,beneficio:0,promedioFinal:16.313,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10674",dni:"61228835",nombre:"LEIVA GOMEZ YONER JARLIN",sex:"M",fisico:17.5,conocimientos:16,entrevista:15,promedioParcial:16.313,beneficio:0,promedioFinal:16.313,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12362",dni:"71683684",nombre:"ROJAS JAUREGUI FABIAN ALBERTO",sex:"M",fisico:18.5,conocimientos:15,entrevista:15,promedioParcial:16.313,beneficio:0,promedioFinal:16.313,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12688",dni:"72230052",nombre:"HERNANDEZ CHUMBES ANGEL JOSE",sex:"M",fisico:18.5,conocimientos:15,entrevista:15,promedioParcial:16.313,beneficio:0,promedioFinal:16.313,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13237",dni:"61295307",nombre:"ANGELES PASTOR CHRISTOPHER",sex:"M",fisico:17.25,conocimientos:16.2,entrevista:15,promedioParcial:16.294,beneficio:0,promedioFinal:16.294,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10070",dni:"77177809",nombre:"MATEO TORRES FABIO NOEL",sex:"M",fisico:19.5,conocimientos:14.6,entrevista:14,promedioParcial:16.288,beneficio:0,promedioFinal:16.288,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10891",dni:"72360364",nombre:"LLANCARI MANRIQUE PAOLO EDUARDO",sex:"M",fisico:19.5,conocimientos:14.6,entrevista:14,promedioParcial:16.288,beneficio:0,promedioFinal:16.288,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13576",dni:"60514569",nombre:"CAPCHA COLLACHAGUA JAIR CRISTHIAN",sex:"M",fisico:19.5,conocimientos:14.6,entrevista:14,promedioParcial:16.288,beneficio:0,promedioFinal:16.288,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10539",dni:"72688199",nombre:"GARCIA BURGA HECTOR NATANIEL",sex:"M",fisico:17.75,conocimientos:15,entrevista:16,promedioParcial:16.281,beneficio:0,promedioFinal:16.281,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12864",dni:"73249970",nombre:"CCASANI CHAVEZ YI JUENN",sex:"M",fisico:18.25,conocimientos:11.8,entrevista:12,promedioParcial:14.269,beneficio:2.000,promedioFinal:16.269,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10100",dni:"71926390",nombre:"GONGORA GONZALES ROGER AUGUSTO",sex:"M",fisico:20,conocimientos:16,entrevista:11,promedioParcial:16.250,beneficio:0,promedioFinal:16.250,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10945",dni:"60558917",nombre:"SANTOS BECERRA MOISES",sex:"M",fisico:20,conocimientos:16,entrevista:11,promedioParcial:16.250,beneficio:0,promedioFinal:16.250,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11160",dni:"73799190",nombre:"ARIAS QUISPE JUAN MANUEL SEBASTIAN",sex:"M",fisico:20,conocimientos:16,entrevista:11,promedioParcial:16.250,beneficio:0,promedioFinal:16.250,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11306",dni:"77439752",nombre:"RACHO DAVILA FERNANDO JOSE",sex:"M",fisico:20,conocimientos:16,entrevista:11,promedioParcial:16.250,beneficio:0,promedioFinal:16.250,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10223",dni:"61055159",nombre:"PETREL DELGADILLO SNAYDER",sex:"M",fisico:19,conocimientos:15,entrevista:14,promedioParcial:16.250,beneficio:0,promedioFinal:16.250,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10235",dni:"70532742",nombre:"GARCIA USHIÑAHUA CRISTHIAN",sex:"M",fisico:19,conocimientos:15,entrevista:14,promedioParcial:16.250,beneficio:0,promedioFinal:16.250,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10588",dni:"72359486",nombre:"OTINIANO WONG RANCESCO RENATO",sex:"M",fisico:18.5,conocimientos:14.8,entrevista:15,promedioParcial:16.238,beneficio:0,promedioFinal:16.238,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11717",dni:"60271670",nombre:"QUIÑONES RENGIFO JOSE ALBERTO",sex:"M",fisico:18.5,conocimientos:14.8,entrevista:15,promedioParcial:16.238,beneficio:0,promedioFinal:16.238,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10866",dni:"60199011",nombre:"CALDERON TENORIO CRISTIAN RONALD",sex:"M",fisico:19.75,conocimientos:16.2,entrevista:11,promedioParcial:16.231,beneficio:0,promedioFinal:16.231,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10833",dni:"70645266",nombre:"MARQUINA RAMIREZ FRANK DANIEL",sex:"M",fisico:17.25,conocimientos:16,entrevista:15,promedioParcial:16.219,beneficio:0,promedioFinal:16.219,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11312",dni:"61231822",nombre:"LOZANO CIEZA JHORDAN IVAN",sex:"M",fisico:18.25,conocimientos:15,entrevista:15,promedioParcial:16.219,beneficio:0,promedioFinal:16.219,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10349",dni:"72581242",nombre:"SALINAS VALLE LUIS ANGEL",sex:"M",fisico:19.5,conocimientos:16.4,entrevista:11,promedioParcial:16.213,beneficio:0,promedioFinal:16.213,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10722",dni:"60214667",nombre:"JIMENEZ JIMENEZ ESGAR IVAN",sex:"M",fisico:19.25,conocimientos:14.6,entrevista:14,promedioParcial:16.194,beneficio:0,promedioFinal:16.194,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10163",dni:"60337997",nombre:"LOZA MATAMORROS VICTOR SEBASTIAN",sex:"M",fisico:19,conocimientos:14.8,entrevista:14,promedioParcial:16.175,beneficio:0,promedioFinal:16.175,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10985",dni:"60422115",nombre:"CERVERA COLUNCHE JHEREMI STHIF",sex:"M",fisico:19,conocimientos:14.8,entrevista:14,promedioParcial:16.175,beneficio:0,promedioFinal:16.175,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11242",dni:"71044303",nombre:"LONGA LEON KEVIN ARNOLD",sex:"M",fisico:17.75,conocimientos:16,entrevista:14,promedioParcial:16.156,beneficio:0,promedioFinal:16.156,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11915",dni:"60035439",nombre:"GOÑAS MUÑOZ LUIS MIGUEL",sex:"M",fisico:18.25,conocimientos:14.8,entrevista:15,promedioParcial:16.144,beneficio:0,promedioFinal:16.144,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12286",dni:"61264511",nombre:"ARAOZ FROTA WALTER EMILIO",sex:"M",fisico:18.25,conocimientos:14.8,entrevista:15,promedioParcial:16.144,beneficio:0,promedioFinal:16.144,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10028",dni:"60318626",nombre:"CHAVARRY MARIN DIEGO ROBIÑO",sex:"M",fisico:19.5,conocimientos:16.2,entrevista:11,promedioParcial:16.138,beneficio:0,promedioFinal:16.138,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13018",dni:"63293747",nombre:"MENDOZA RUIZ FRANCIS ALEXIS",sex:"M",fisico:19,conocimientos:16,entrevista:12,promedioParcial:16.125,beneficio:0,promedioFinal:16.125,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13638",dni:"60965063",nombre:"HUANCAS YUPANQUI ANTHONY ROBERTO",sex:"M",fisico:19,conocimientos:16,entrevista:12,promedioParcial:16.125,beneficio:0,promedioFinal:16.125,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11878",dni:"70511041",nombre:"MEGO PEREZ DEYVI ROQUE",sex:"M",fisico:20,conocimientos:15,entrevista:12,promedioParcial:16.125,beneficio:0,promedioFinal:16.125,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10490",dni:"76067755",nombre:"ROMAN HERRERA CAIN JEFERSON",sex:"M",fisico:18,conocimientos:15,entrevista:15,promedioParcial:16.125,beneficio:0,promedioFinal:16.125,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13257",dni:"60590550",nombre:"PALACIOS LAMADRID BRAYAN LEONARDO",sex:"M",fisico:17.5,conocimientos:14.8,entrevista:16,promedioParcial:16.113,beneficio:0,promedioFinal:16.113,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11623",dni:"61183779",nombre:"CRUZ GARCIA ELDER FABRICIO",sex:"M",fisico:19.25,conocimientos:15,entrevista:13,promedioParcial:16.094,beneficio:0,promedioFinal:16.094,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11753",dni:"76895032",nombre:"DOMINGUEZ RODRIGUEZ FERNANDO",sex:"M",fisico:19.25,conocimientos:15,entrevista:13,promedioParcial:16.094,beneficio:0,promedioFinal:16.094,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11754",dni:"61108682",nombre:"TIPULA FARFAN HERBERT NICOLAS",sex:"M",fisico:19.75,conocimientos:15.8,entrevista:11,promedioParcial:16.081,beneficio:0,promedioFinal:16.081,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11289",dni:"73303640",nombre:"CHIPANA MENDEZ HECTOR JAIR",sex:"M",fisico:18.75,conocimientos:14.8,entrevista:14,promedioParcial:16.081,beneficio:0,promedioFinal:16.081,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10847",dni:"76024363",nombre:"BARZOLA GUILLEN DAVID JULIO",sex:"M",fisico:18.25,conocimientos:14.6,entrevista:15,promedioParcial:16.069,beneficio:0,promedioFinal:16.069,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11719",dni:"60852819",nombre:"CADENAS MALASQUEZ DAN FRANCO",sex:"M",fisico:20,conocimientos:14.8,entrevista:12,promedioParcial:16.050,beneficio:0,promedioFinal:16.050,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13043",dni:"60941899",nombre:"LAZO MORCCOLLA LEONARDO FRANK",sex:"M",fisico:17.25,conocimientos:16.2,entrevista:14,promedioParcial:16.044,beneficio:0,promedioFinal:16.044,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10440",dni:"60456048",nombre:"ZAPATA PRECIADO PIERO GIARIANNI",sex:"M",fisico:17.75,conocimientos:15,entrevista:15,promedioParcial:16.031,beneficio:0,promedioFinal:16.031,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10977",dni:"61459899",nombre:"CAYO CUBA CESAR",sex:"M",fisico:19,conocimientos:16.4,entrevista:11,promedioParcial:16.025,beneficio:0,promedioFinal:16.025,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12083",dni:"71284638",nombre:"DIAZ ASENJO FABRIZIO HERNAN",sex:"M",fisico:19,conocimientos:16.4,entrevista:11,promedioParcial:16.025,beneficio:0,promedioFinal:16.025,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11140",dni:"70640738",nombre:"PACHECO ULLILEN FLAVIO CESAR",sex:"M",fisico:17,conocimientos:16.4,entrevista:14,promedioParcial:16.025,beneficio:0,promedioFinal:16.025,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11527",dni:"60471551",nombre:"VARGAS ZEVALLOS GIORDANO FELIX",sex:"M",fisico:15.5,conocimientos:16,entrevista:11,promedioParcial:14.563,beneficio:1.456,promedioFinal:16.019,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11542",dni:"61129796",nombre:"VASQUEZ FLORES CHRISTOPHER ABEL",sex:"M",fisico:18.75,conocimientos:14.6,entrevista:14,promedioParcial:16.006,beneficio:0,promedioFinal:16.006,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11744",dni:"73630321",nombre:"VEGA DIAZ VICTOR ARMANDO",sex:"M",fisico:18.75,conocimientos:14.6,entrevista:14,promedioParcial:16.006,beneficio:0,promedioFinal:16.006,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10079",dni:"60204951",nombre:"GARCIA HERRERA DEIMAN BRAYAN",sex:"M",fisico:18.5,conocimientos:14.8,entrevista:14,promedioParcial:15.988,beneficio:0,promedioFinal:15.988,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11563",dni:"61135699",nombre:"YUJRA DELGADO OMAR ALEXIS",sex:"M",fisico:17.75,conocimientos:16.2,entrevista:13,promedioParcial:15.981,beneficio:0,promedioFinal:15.981,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11150",dni:"60029129",nombre:"CONSTANTINO BARROS MIGAEL JOSE",sex:"M",fisico:20,conocimientos:14.6,entrevista:12,promedioParcial:15.975,beneficio:0,promedioFinal:15.975,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11699",dni:"61070298",nombre:"MAMANI QUISPE BRAYAN",sex:"M",fisico:20,conocimientos:14.6,entrevista:12,promedioParcial:15.975,beneficio:0,promedioFinal:15.975,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11800",dni:"61028028",nombre:"ACUÑA CABRERA EVER",sex:"M",fisico:20,conocimientos:14.6,entrevista:12,promedioParcial:15.975,beneficio:0,promedioFinal:15.975,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11540",dni:"70624686",nombre:"GARCIA GARCIA VICTOR LEONARDO",sex:"M",fisico:18,conocimientos:14.6,entrevista:15,promedioParcial:15.975,beneficio:0,promedioFinal:15.975,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11264",dni:"76912884",nombre:"PUCAPUCA LAURA RODRIGO",sex:"M",fisico:17.25,conocimientos:16,entrevista:14,promedioParcial:15.969,beneficio:0,promedioFinal:15.969,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11249",dni:"61064243",nombre:"RODRIGUEZ MANRIQUE SEBASTIAN WALTER",sex:"M",fisico:19.75,conocimientos:14.8,entrevista:12,promedioParcial:15.956,beneficio:0,promedioFinal:15.956,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10663",dni:"70486270",nombre:"GARCIA SOLIS JHORDY LUIS",sex:"M",fisico:17.75,conocimientos:14.8,entrevista:15,promedioParcial:15.956,beneficio:0,promedioFinal:15.956,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10455",dni:"60159274",nombre:"VASQUEZ DIAZ UMBER",sex:"M",fisico:19.25,conocimientos:14.6,entrevista:13,promedioParcial:15.944,beneficio:0,promedioFinal:15.944,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10888",dni:"61085706",nombre:"REQUEJO SANCHEZ JESUS ALONZO",sex:"M",fisico:17.25,conocimientos:14.6,entrevista:16,promedioParcial:15.944,beneficio:0,promedioFinal:15.944,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11004",dni:"60311310",nombre:"FERNANDEZ VERA ROY LEONARDO",sex:"M",fisico:16.5,conocimientos:16,entrevista:15,promedioParcial:15.938,beneficio:0,promedioFinal:15.938,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11496",dni:"74585720",nombre:"VIDAURRE HUAMANI ITALO GUSTAVO",sex:"M",fisico:19.5,conocimientos:15,entrevista:12,promedioParcial:15.938,beneficio:0,promedioFinal:15.938,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12755",dni:"61035342",nombre:"ZARZOSA MENDOZA FABRICIO VALENTINO",sex:"M",fisico:19.5,conocimientos:15,entrevista:12,promedioParcial:15.938,beneficio:0,promedioFinal:15.938,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10051",dni:"60485114",nombre:"CERNA ROMERO RAY JESUS",sex:"M",fisico:17.5,conocimientos:15,entrevista:15,promedioParcial:15.938,beneficio:0,promedioFinal:15.938,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11544",dni:"60016971",nombre:"CUSIPUMA CJURO NAHU LEO",sex:"M",fisico:17.5,conocimientos:15,entrevista:15,promedioParcial:15.938,beneficio:0,promedioFinal:15.938,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12115",dni:"77471975",nombre:"ANDRADE HUANCA DIEGO AUGUSTO",sex:"M",fisico:16.25,conocimientos:16.2,entrevista:15,promedioParcial:15.919,beneficio:0,promedioFinal:15.919,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11740",dni:"60733080",nombre:"BRICEÑO ELGUERA MIGUEL ANGEL",sex:"M",fisico:17.25,conocimientos:15.8,entrevista:14,promedioParcial:15.894,beneficio:0,promedioFinal:15.894,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13572",dni:"76188720",nombre:"VELARDE LIZARAZO OSCAR ADRIEL ISRAEL",sex:"M",fisico:18.25,conocimientos:14.8,entrevista:14,promedioParcial:15.894,beneficio:0,promedioFinal:15.894,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10668",dni:"70636107",nombre:"LUJAN RIVERA ELIAS FRANK",sex:"M",fisico:19.75,conocimientos:14.6,entrevista:12,promedioParcial:15.881,beneficio:0,promedioFinal:15.881,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12819",dni:"76195236",nombre:"ESCALANTE ALVAREZ YUDHEL",sex:"M",fisico:17.75,conocimientos:14.6,entrevista:15,promedioParcial:15.881,beneficio:0,promedioFinal:15.881,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10306",dni:"73963794",nombre:"LAOS ROJAS JORDAN BECKMAN",sex:"M",fisico:19,conocimientos:16,entrevista:11,promedioParcial:15.875,beneficio:0,promedioFinal:15.875,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10423",dni:"75947111",nombre:"FIGUEROA MARCELO FABRICIO",sex:"M",fisico:20,conocimientos:15,entrevista:11,promedioParcial:15.875,beneficio:0,promedioFinal:15.875,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12022",dni:"61027954",nombre:"VASQUEZ TARRILLO YELSIN ALDAHIR",sex:"M",fisico:20,conocimientos:15,entrevista:11,promedioParcial:15.875,beneficio:0,promedioFinal:15.875,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12764",dni:"62543778",nombre:"ZELA MURILLO SEBASTIAN RAFAEL",sex:"M",fisico:18,conocimientos:15,entrevista:14,promedioParcial:15.875,beneficio:0,promedioFinal:15.875,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11811",dni:"61454967",nombre:"VILCA LAZO ANGELO PAOLO",sex:"M",fisico:17.25,conocimientos:16.4,entrevista:13,promedioParcial:15.869,beneficio:0,promedioFinal:15.869,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11650",dni:"74567329",nombre:"ACEVEDO SANTOS JUAN LUIS",sex:"M",fisico:17.5,conocimientos:14.8,entrevista:15,promedioParcial:15.863,beneficio:0,promedioFinal:15.863,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10533",dni:"73492986",nombre:"JAVIER ROSALES JHONATAN",sex:"M",fisico:17.25,conocimientos:15,entrevista:15,promedioParcial:15.844,beneficio:0,promedioFinal:15.844,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12352",dni:"70720931",nombre:"MARAVI SANTANA PIERO CESAR",sex:"M",fisico:17.25,conocimientos:15,entrevista:15,promedioParcial:15.844,beneficio:0,promedioFinal:15.844,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13103",dni:"70489457",nombre:"BUSTINCIO SANCHEZ BRAYAN ELVER",sex:"M",fisico:17.25,conocimientos:15,entrevista:15,promedioParcial:15.844,beneficio:0,promedioFinal:15.844,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11996",dni:"71833894",nombre:"DIAZ ROJAS JIMMY JUAN",sex:"M",fisico:18,conocimientos:16.2,entrevista:12,promedioParcial:15.825,beneficio:0,promedioFinal:15.825,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10290",dni:"60252892",nombre:"MAYTA HERNANDEZ DAYRON SAMIR",sex:"M",fisico:18.25,conocimientos:14.6,entrevista:14,promedioParcial:15.819,beneficio:0,promedioFinal:15.819,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10978",dni:"60199004",nombre:"HERNANDEZ VALLEJOS YEISON ESMIT",sex:"M",fisico:18.25,conocimientos:14.6,entrevista:14,promedioParcial:15.819,beneficio:0,promedioFinal:15.819,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10808",dni:"60562909",nombre:"VEGA CERDAN DARWIN NESER",sex:"M",fisico:17.25,conocimientos:16.2,entrevista:13,promedioParcial:15.794,beneficio:0,promedioFinal:15.794,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11601",dni:"60478717",nombre:"CHIPORRA SAENZ DIEGO GERMAN",sex:"M",fisico:17.5,conocimientos:14.6,entrevista:15,promedioParcial:15.788,beneficio:0,promedioFinal:15.788,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10091",dni:"75797346",nombre:"MEZA HUAIRE YORDAN AMERICO",sex:"M",fisico:17.75,conocimientos:15,entrevista:14,promedioParcial:15.781,beneficio:0,promedioFinal:15.781,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11232",dni:"60557220",nombre:"SOTO GARCIA GREGORY STALYN",sex:"M",fisico:17.25,conocimientos:14.8,entrevista:15,promedioParcial:15.769,beneficio:0,promedioFinal:15.769,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13613",dni:"75012882",nombre:"GUIMAC VEGA ROBINZON WILFREDO",sex:"M",fisico:17.25,conocimientos:14.8,entrevista:15,promedioParcial:15.769,beneficio:0,promedioFinal:15.769,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10161",dni:"73659721",nombre:"ORDOÑEZ PRIETO HUGO JESUS",sex:"M",fisico:16,conocimientos:16,entrevista:15,promedioParcial:15.750,beneficio:0,promedioFinal:15.750,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11709",dni:"71463063",nombre:"JURADO MOJONERO JUAN GABRIEL",sex:"M",fisico:19,conocimientos:15,entrevista:12,promedioParcial:15.750,beneficio:0,promedioFinal:15.750,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12745",dni:"60531786",nombre:"LUNA OROZCO PEDRO ESMITH",sex:"M",fisico:17,conocimientos:15,entrevista:15,promedioParcial:15.750,beneficio:0,promedioFinal:15.750,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12130",dni:"71547812",nombre:"ARCE COAQUIRA CRISTHIAN EDUARDO",sex:"M",fisico:19.25,conocimientos:14.6,entrevista:12,promedioParcial:15.694,beneficio:0,promedioFinal:15.694,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10767",dni:"76730509",nombre:"CORDOVA LOPEZ MAYCOL SMITH",sex:"M",fisico:17.25,conocimientos:14.6,entrevista:15,promedioParcial:15.694,beneficio:0,promedioFinal:15.694,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11391",dni:"76146902",nombre:"JUAREZ DE LA CRUZ JEAN PIERRE",sex:"M",fisico:17.25,conocimientos:14.6,entrevista:15,promedioParcial:15.694,beneficio:0,promedioFinal:15.694,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12263",dni:"77212573",nombre:"ARTEAGA GOMEZ JOSUE ORLANDO",sex:"M",fisico:17.25,conocimientos:14.6,entrevista:15,promedioParcial:15.694,beneficio:0,promedioFinal:15.694,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11812",dni:"70531970",nombre:"NUÑEZ RIVERA VICTOR JHAREL",sex:"M",fisico:16.5,conocimientos:16,entrevista:14,promedioParcial:15.688,beneficio:0,promedioFinal:15.688,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11291",dni:"73066868",nombre:"MARTINEZ AYALA RODRIGO ALESSANDO",sex:"M",fisico:19.5,conocimientos:15,entrevista:11,promedioParcial:15.688,beneficio:0,promedioFinal:15.688,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12368",dni:"60071265",nombre:"ARIAS FRANCIA JOE ALEXANDER",sex:"M",fisico:17,conocimientos:14.8,entrevista:15,promedioParcial:15.675,beneficio:0,promedioFinal:15.675,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12723",dni:"76881738",nombre:"ROMERO TAPARA JOSE ARMANDO",sex:"M",fisico:17,conocimientos:14.8,entrevista:15,promedioParcial:15.675,beneficio:0,promedioFinal:15.675,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12456",dni:"75591764",nombre:"MANTILLA TASILLA HENRY",sex:"M",fisico:18.5,conocimientos:14.6,entrevista:13,promedioParcial:15.663,beneficio:0,promedioFinal:15.663,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12971",dni:"76755917",nombre:"TABOADA BENITES JUAN JOSE SMITH",sex:"M",fisico:18.75,conocimientos:15,entrevista:12,promedioParcial:15.656,beneficio:0,promedioFinal:15.656,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10063",dni:"74584547",nombre:"GUIZADO BENITO ADRIAN",sex:"M",fisico:16.75,conocimientos:15,entrevista:15,promedioParcial:15.656,beneficio:0,promedioFinal:15.656,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12161",dni:"75847047",nombre:"COLLAZOS VASQUEZ MARCOS ORLANDO",sex:"M",fisico:18,conocimientos:16.4,entrevista:11,promedioParcial:15.650,beneficio:0,promedioFinal:15.650,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10672",dni:"60056402",nombre:"CRUZ DAVILA ARNOLD EMERSON",sex:"M",fisico:19.75,conocimientos:14.6,entrevista:11,promedioParcial:15.631,beneficio:0,promedioFinal:15.631,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10324",dni:"61158845",nombre:"CARPIO TALAVERA PIERO ANTONIO",sex:"M",fisico:18.75,conocimientos:13.6,entrevista:14,promedioParcial:15.631,beneficio:0,promedioFinal:15.631,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10970",dni:"75523672",nombre:"TINEO GARAMENDI HASSIER ALFONSO",sex:"M",fisico:18,conocimientos:15,entrevista:13,promedioParcial:15.625,beneficio:0,promedioFinal:15.625,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11109",dni:"60531568",nombre:"VILCHEZ JIMENEZ ELKIN SAMIR",sex:"M",fisico:20,conocimientos:11,entrevista:16,promedioParcial:15.625,beneficio:0,promedioFinal:15.625,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10973",dni:"60311410",nombre:"PEREZ SAAVEDRA JUAN ANTONIO",sex:"M",fisico:17.5,conocimientos:14.8,entrevista:14,promedioParcial:15.613,beneficio:0,promedioFinal:15.613,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11015",dni:"70699002",nombre:"CASTRO PICHILINGUE ANGEL GABRIEL",sex:"M",fisico:18.75,conocimientos:14.8,entrevista:12,promedioParcial:15.581,beneficio:0,promedioFinal:15.581,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10221",dni:"61202466",nombre:"SIPAUCCAR CHICLLASTO JOSEPH",sex:"M",fisico:16.75,conocimientos:14.8,entrevista:15,promedioParcial:15.581,beneficio:0,promedioFinal:15.581,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12002",dni:"70534349",nombre:"MITMA FERNANDEZ JOHN PIERO",sex:"M",fisico:18,conocimientos:16.2,entrevista:11,promedioParcial:15.575,beneficio:0,promedioFinal:15.575,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10360",dni:"70595458",nombre:"QUISPE ALIAGA SEBASTIAN ALONSO",sex:"M",fisico:19,conocimientos:13.2,entrevista:14,promedioParcial:15.575,beneficio:0,promedioFinal:15.575,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13491",dni:"60018107",nombre:"NAHUAMEL CCAPATINTA FELIX YAMIL",sex:"M",fisico:16.25,conocimientos:15.8,entrevista:14,promedioParcial:15.519,beneficio:0,promedioFinal:15.519,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12803",dni:"60745694",nombre:"VILLANUEVA RODRIGUEZ ALDAIR ABAD",sex:"M",fisico:16.5,conocimientos:14.8,entrevista:15,promedioParcial:15.488,beneficio:0,promedioFinal:15.488,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12735",dni:"61324134",nombre:"LAURA RAMOS ANDY MICHEL",sex:"M",fisico:16,conocimientos:14.6,entrevista:16,promedioParcial:15.475,beneficio:0,promedioFinal:15.475,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10350",dni:"74761967",nombre:"RUIZ GONZALES ANDERSON SMITH",sex:"M",fisico:16.25,conocimientos:15,entrevista:15,promedioParcial:15.469,beneficio:0,promedioFinal:15.469,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11494",dni:"75424900",nombre:"ALVAREZ RIVERA ANTHONY ABRAHAM YACK",sex:"M",fisico:16.25,conocimientos:15,entrevista:15,promedioParcial:15.469,beneficio:0,promedioFinal:15.469,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10816",dni:"70592626",nombre:"CANCELA MAGARIÑO CARLOS FABRICIO",sex:"M",fisico:15.75,conocimientos:14.8,entrevista:16,promedioParcial:15.456,beneficio:0,promedioFinal:15.456,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13048",dni:"72954222",nombre:"RODRIGUEZ SANCHEZ EDWIN ARON",sex:"M",fisico:17,conocimientos:16.2,entrevista:12,promedioParcial:15.450,beneficio:0,promedioFinal:15.450,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10506",dni:"60623716",nombre:"TORO TARRILLO LEONARDO SMITH",sex:"M",fisico:16.5,conocimientos:14.6,entrevista:15,promedioParcial:15.413,beneficio:0,promedioFinal:15.413,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12096",dni:"71273242",nombre:"GAMBINI FLORECIN DIEGO ARMANDO",sex:"M",fisico:16.25,conocimientos:14.8,entrevista:15,promedioParcial:15.394,beneficio:0,promedioFinal:15.394,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12377",dni:"60995020",nombre:"GUTIERREZ BANCES ALEJANDRO MIGUEL",sex:"M",fisico:16.25,conocimientos:14.6,entrevista:15,promedioParcial:15.319,beneficio:0,promedioFinal:15.319,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11354",dni:"77477354",nombre:"ACUÑA GIRON JOSE HERNAN",sex:"M",fisico:16,conocimientos:14.8,entrevista:15,promedioParcial:15.300,beneficio:0,promedioFinal:15.300,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12464",dni:"70531487",nombre:"GARCIA CHIRA JOHAN JOE",sex:"M",fisico:15.75,conocimientos:14.8,entrevista:15,promedioParcial:15.206,beneficio:0,promedioFinal:15.206,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10923",dni:"73304219",nombre:"PUJAY TINEO EDWAR MAXI",sex:"M",fisico:15.5,conocimientos:14.8,entrevista:15,promedioParcial:15.113,beneficio:0,promedioFinal:15.113,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11124",dni:"75260556",nombre:"POLINARIO LOPEZ JEREMY JHOAN",sex:"M",fisico:15.5,conocimientos:14.8,entrevista:15,promedioParcial:15.113,beneficio:0,promedioFinal:15.113,especialidad:"ORDEN Y SEGURIDAD"},
+  // VARONES — INVESTIGACIÓN CRIMINAL
+  {carnet:"10774",dni:"73204709",nombre:"CAMPOS VASQUEZ ALONSO",sex:"M",fisico:19.5,conocimientos:16,entrevista:15,promedioParcial:17.063,beneficio:3.413,promedioFinal:20.000,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12569",dni:"74031018",nombre:"BERNABE CHAIÑA JESUS ALBERTO",sex:"M",fisico:20,conocimientos:16.2,entrevista:16,promedioParcial:17.575,beneficio:2.000,promedioFinal:19.575,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10311",dni:"73323180",nombre:"ZAMORA CUSMA ALDO JESUS",sex:"M",fisico:19.5,conocimientos:16,entrevista:16,promedioParcial:17.313,beneficio:2.000,promedioFinal:19.313,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12496",dni:"76246991",nombre:"PISFIL RELUZ ENRIQUE GUSTAVO",sex:"M",fisico:20,conocimientos:15,entrevista:16,promedioParcial:17.125,beneficio:2.000,promedioFinal:19.125,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12113",dni:"78885651",nombre:"QUISPE QUISPE JIMY OMAR",sex:"M",fisico:20,conocimientos:16.2,entrevista:14,promedioParcial:17.075,beneficio:2.000,promedioFinal:19.075,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13192",dni:"60769409",nombre:"BLAS GUEVARA OBED JOSUE",sex:"M",fisico:19.75,conocimientos:16.2,entrevista:14,promedioParcial:16.981,beneficio:2.000,promedioFinal:18.981,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10611",dni:"76021903",nombre:"RAFAEL QUILLE CLIVER DANTE",sex:"M",fisico:19,conocimientos:16,entrevista:15,promedioParcial:16.875,beneficio:2.000,promedioFinal:18.875,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13735",dni:"76725326",nombre:"ALABRIN CASTILLEJO EDWIN EDICSON",sex:"M",fisico:18.75,conocimientos:16.2,entrevista:15,promedioParcial:16.856,beneficio:2.000,promedioFinal:18.856,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13567",dni:"76681075",nombre:"CONDORI CCACCA BRAYAN SAUL",sex:"M",fisico:19,conocimientos:16.4,entrevista:14,promedioParcial:16.775,beneficio:2.000,promedioFinal:18.775,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12929",dni:"76248975",nombre:"ROJAS APOLINARIO RUSBEL CIRENEO",sex:"M",fisico:19.25,conocimientos:16,entrevista:14,promedioParcial:16.719,beneficio:2.000,promedioFinal:18.719,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12133",dni:"72162787",nombre:"LOPEZ TUANAMA ELIDERGIO",sex:"M",fisico:20,conocimientos:14.8,entrevista:14,promedioParcial:16.550,beneficio:2.000,promedioFinal:18.550,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13635",dni:"72799731",nombre:"SILVA FLORES GEORFFDAN ANTHONNY",sex:"M",fisico:19.25,conocimientos:16.2,entrevista:13,promedioParcial:16.544,beneficio:2.000,promedioFinal:18.544,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11107",dni:"78376062",nombre:"CASTILLO QUISPE JORGE LUIS",sex:"M",fisico:18,conocimientos:16.4,entrevista:14,promedioParcial:16.400,beneficio:2.000,promedioFinal:18.400,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12543",dni:"72936108",nombre:"VERA VERASTEGUI JHON ELIX",sex:"M",fisico:18.25,conocimientos:16,entrevista:14,promedioParcial:16.344,beneficio:2.000,promedioFinal:18.344,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12847",dni:"75818470",nombre:"HUAYNATES AVILA JERRY JOSE",sex:"M",fisico:18,conocimientos:16.2,entrevista:14,promedioParcial:16.325,beneficio:2.000,promedioFinal:18.325,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13428",dni:"74837873",nombre:"BURGOS ORIHUELA ALEXANDER",sex:"M",fisico:18.25,conocimientos:16.6,entrevista:13,promedioParcial:16.319,beneficio:2.000,promedioFinal:18.319,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10035",dni:"60863484",nombre:"JIMENEZ ACOSTA OSWALDO MOISES",sex:"M",fisico:17.5,conocimientos:16,entrevista:16,promedioParcial:16.563,beneficio:1.656,promedioFinal:18.219,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10906",dni:"76014854",nombre:"NUÑEZ CABRERA GILMER",sex:"M",fisico:19.5,conocimientos:14.6,entrevista:15,promedioParcial:16.538,beneficio:1.654,promedioFinal:18.191,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11916",dni:"76341300",nombre:"CALDERON CHAVEZ OSCAR YAMIL",sex:"M",fisico:17.75,conocimientos:16,entrevista:14,promedioParcial:16.156,beneficio:2.000,promedioFinal:18.156,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12551",dni:"72264239",nombre:"ARRIETA ASTUPIÑAN BRIAM ANTONY",sex:"M",fisico:18.25,conocimientos:16,entrevista:13,promedioParcial:16.094,beneficio:2.000,promedioFinal:18.094,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12570",dni:"76058060",nombre:"RAMIREZ CRUCES DIEGO ALEJANDRO",sex:"M",fisico:17.25,conocimientos:16.2,entrevista:14,promedioParcial:16.044,beneficio:2.000,promedioFinal:18.044,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11895",dni:"76680121",nombre:"LEON LECHUGA RUDY",sex:"M",fisico:19,conocimientos:16,entrevista:11,promedioParcial:15.875,beneficio:2.000,promedioFinal:17.875,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12945",dni:"60239304",nombre:"OCHOA RIVERA ANGEL GABRIEL",sex:"M",fisico:16.75,conocimientos:16.2,entrevista:14,promedioParcial:15.856,beneficio:2.000,promedioFinal:17.856,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10609",dni:"73643613",nombre:"FERRERYROS AREC JHON WILLY",sex:"M",fisico:17,conocimientos:14.6,entrevista:16,promedioParcial:15.850,beneficio:2.000,promedioFinal:17.850,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10285",dni:"70813599",nombre:"VARGAS GARCIA JAMIR JARED",sex:"M",fisico:18.25,conocimientos:15.6,entrevista:14,promedioParcial:16.194,beneficio:1.619,promedioFinal:17.813,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13312",dni:"74739762",nombre:"MEDINA PAREDES ANIBAL RIBALDO",sex:"M",fisico:17,conocimientos:15.6,entrevista:14,promedioParcial:15.725,beneficio:2.000,promedioFinal:17.725,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12545",dni:"71631401",nombre:"FLORES COSCO MARCO ANTONIO",sex:"M",fisico:15.75,conocimientos:16,entrevista:15,promedioParcial:15.656,beneficio:2.000,promedioFinal:17.656,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10310",dni:"60775191",nombre:"ZAMORA CUSMA ANDRE SEBASTIAN",sex:"M",fisico:20,conocimientos:16,entrevista:16,promedioParcial:17.500,beneficio:0,promedioFinal:17.500,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10335",dni:"60378725",nombre:"DELGADO VASQUEZ JHON JEINER",sex:"M",fisico:20,conocimientos:16,entrevista:16,promedioParcial:17.500,beneficio:0,promedioFinal:17.500,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10406",dni:"60342573",nombre:"MONTENEGRO OCHOA NOYBER SHAIR",sex:"M",fisico:20,conocimientos:16,entrevista:16,promedioParcial:17.500,beneficio:0,promedioFinal:17.500,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10597",dni:"60839184",nombre:"MEDINA EGOAVIL SEBASTIAN LEONARDO",sex:"M",fisico:19.25,conocimientos:16.6,entrevista:16,promedioParcial:17.444,beneficio:0,promedioFinal:17.444,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13553",dni:"73703506",nombre:"SERRANO CALIZAYA DIEGO ALONSO",sex:"M",fisico:16.25,conocimientos:16.2,entrevista:13,promedioParcial:15.419,beneficio:2.000,promedioFinal:17.419,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10171",dni:"75366614",nombre:"FRETEL HERHUAY FELIX",sex:"M",fisico:19,conocimientos:16.4,entrevista:16,promedioParcial:17.275,beneficio:0,promedioFinal:17.275,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11062",dni:"60754568",nombre:"CHARCA HUAMAN ANDERSON BRAYAN",sex:"M",fisico:19.75,conocimientos:15.6,entrevista:16,promedioParcial:17.256,beneficio:0,promedioFinal:17.256,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11359",dni:"60234804",nombre:"YANA SUCASACA MAYCOL",sex:"M",fisico:20,conocimientos:15.8,entrevista:15,promedioParcial:17.175,beneficio:0,promedioFinal:17.175,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11495",dni:"73308146",nombre:"LOZADA ALARCON BERZOINI ELI",sex:"M",fisico:19.75,conocimientos:16,entrevista:15,promedioParcial:17.156,beneficio:0,promedioFinal:17.156,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10042",dni:"70924162",nombre:"BRIONES TORRES STIHF MARIANO",sex:"M",fisico:18.5,conocimientos:16.4,entrevista:16,promedioParcial:17.088,beneficio:0,promedioFinal:17.088,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11403",dni:"60492973",nombre:"ROJAS BAUTISTA SANTOS STEFANO",sex:"M",fisico:15.25,conocimientos:16,entrevista:15,promedioParcial:15.469,beneficio:1.547,promedioFinal:17.016,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12163",dni:"74586572",nombre:"CURASI LLANOS MANUEL ANDRES",sex:"M",fisico:20,conocimientos:16,entrevista:14,promedioParcial:17.000,beneficio:0,promedioFinal:17.000,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10354",dni:"72690244",nombre:"GUERRERO GAMARRA ADRIAN RENATO",sex:"M",fisico:20,conocimientos:14.6,entrevista:16,promedioParcial:16.975,beneficio:0,promedioFinal:16.975,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11829",dni:"61251883",nombre:"ANTEQUERA MALCA SEBASTIAN FABRICIO",sex:"M",fisico:20,conocimientos:14.6,entrevista:16,promedioParcial:16.975,beneficio:0,promedioFinal:16.975,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11344",dni:"60975102",nombre:"BURGA LONGA MATIAS ALESSANDER",sex:"M",fisico:20,conocimientos:15.8,entrevista:14,promedioParcial:16.925,beneficio:0,promedioFinal:16.925,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10005",dni:"60154601",nombre:"CHUGDEN ROJAS EULER JOLIBET",sex:"M",fisico:20,conocimientos:15,entrevista:15,promedioParcial:16.875,beneficio:0,promedioFinal:16.875,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10478",dni:"71196292",nombre:"GAVIDIA TAPIA JOSEPH JHONATAN",sex:"M",fisico:20,conocimientos:15,entrevista:15,promedioParcial:16.875,beneficio:0,promedioFinal:16.875,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11428",dni:"74538575",nombre:"AYAY PEREZ JAMIL ABDIEL",sex:"M",fisico:20,conocimientos:15,entrevista:15,promedioParcial:16.875,beneficio:0,promedioFinal:16.875,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11662",dni:"73347365",nombre:"CUBAS CASTILLO MIGUEL ANGEL",sex:"M",fisico:18.75,conocimientos:16.2,entrevista:15,promedioParcial:16.856,beneficio:0,promedioFinal:16.856,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11632",dni:"74632278",nombre:"CHACON CHILE LUIS MIGUEL",sex:"M",fisico:16.25,conocimientos:16,entrevista:11,promedioParcial:14.844,beneficio:2.000,promedioFinal:16.844,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12736",dni:"75057178",nombre:"PRIETO OJEDA ANDERSON ARMANDO",sex:"M",fisico:20,conocimientos:14.8,entrevista:15,promedioParcial:16.800,beneficio:0,promedioFinal:16.800,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10003",dni:"73498651",nombre:"POWOSINO CERQUIN JOEL DEYVI",sex:"M",fisico:19.75,conocimientos:15,entrevista:15,promedioParcial:16.781,beneficio:0,promedioFinal:16.781,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12937",dni:"60166829",nombre:"HEREDIA BAUTISTA ROIMER ESTEBAN",sex:"M",fisico:19.75,conocimientos:15,entrevista:15,promedioParcial:16.781,beneficio:0,promedioFinal:16.781,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13628",dni:"78801933",nombre:"VASQUEZ LETONA ALVARO DANIEL",sex:"M",fisico:16.75,conocimientos:14.6,entrevista:12,promedioParcial:14.756,beneficio:2.000,promedioFinal:16.756,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11799",dni:"60550957",nombre:"OTEO PIÑAS JHACK EDER",sex:"M",fisico:20,conocimientos:16,entrevista:13,promedioParcial:16.750,beneficio:0,promedioFinal:16.750,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10605",dni:"61203370",nombre:"BAZAN OYARCE VICTOR RAUL",sex:"M",fisico:19,conocimientos:15,entrevista:16,promedioParcial:16.750,beneficio:0,promedioFinal:16.750,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10459",dni:"61543948",nombre:"PALACIOS DEL AGUILA YURI ANDREE",sex:"M",fisico:17.75,conocimientos:16.2,entrevista:16,promedioParcial:16.731,beneficio:0,promedioFinal:16.731,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11989",dni:"61272146",nombre:"FLORES CAMPOS JUNIOR STEVEN",sex:"M",fisico:19.25,conocimientos:14.6,entrevista:16,promedioParcial:16.694,beneficio:0,promedioFinal:16.694,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10524",dni:"75144549",nombre:"PEREZ POCOHUANCA JAMES EMANUEL",sex:"M",fisico:19.5,conocimientos:15,entrevista:15,promedioParcial:16.688,beneficio:0,promedioFinal:16.688,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13130",dni:"60158363",nombre:"CARRASCO RIVERA JOSE DILCER",sex:"M",fisico:18.75,conocimientos:15,entrevista:16,promedioParcial:16.656,beneficio:0,promedioFinal:16.656,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10746",dni:"76970407",nombre:"ZELA COLLANQUI OMAR ALEXIS",sex:"M",fisico:18,conocimientos:16.4,entrevista:15,promedioParcial:16.650,beneficio:0,promedioFinal:16.650,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11261",dni:"76576935",nombre:"HUAMAN MENDOZA JANES YONELI",sex:"M",fisico:19.75,conocimientos:14.6,entrevista:15,promedioParcial:16.631,beneficio:0,promedioFinal:16.631,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10942",dni:"75059813",nombre:"ORTIZ PECHE JHONATAN ISRAEL",sex:"M",fisico:19,conocimientos:16,entrevista:14,promedioParcial:16.625,beneficio:0,promedioFinal:16.625,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10564",dni:"61527120",nombre:"MIRANDA CORDOVA FREDDY ALEXANDER",sex:"M",fisico:20,conocimientos:15,entrevista:14,promedioParcial:16.625,beneficio:0,promedioFinal:16.625,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12683",dni:"76754232",nombre:"CASIQUE MONTEZA OSCAR HERNAN",sex:"M",fisico:18.25,conocimientos:16,entrevista:15,promedioParcial:16.594,beneficio:0,promedioFinal:16.594,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11335",dni:"71144723",nombre:"BARDALES RODRIGUEZ JOSE SANTIAGO",sex:"M",fisico:19.25,conocimientos:15,entrevista:15,promedioParcial:16.594,beneficio:0,promedioFinal:16.594,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12588",dni:"73367598",nombre:"ARRIETA MEJIA CRISTHIAN YERSON",sex:"M",fisico:17.5,conocimientos:16,entrevista:16,promedioParcial:16.563,beneficio:0,promedioFinal:16.563,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10998",dni:"60027360",nombre:"MORENO BONIFACIO FRAAY JENER",sex:"M",fisico:20,conocimientos:14.8,entrevista:14,promedioParcial:16.550,beneficio:0,promedioFinal:16.550,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12402",dni:"77491717",nombre:"ABANTO REYES YUSTIN ROIMY",sex:"M",fisico:17.25,conocimientos:16.2,entrevista:16,promedioParcial:16.544,beneficio:0,promedioFinal:16.544,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10726",dni:"60030175",nombre:"GOÑAS MIRANO JHON EDWIN",sex:"M",fisico:19.25,conocimientos:14.2,entrevista:16,promedioParcial:16.544,beneficio:0,promedioFinal:16.544,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13142",dni:"75739859",nombre:"TERRONES CERVERA EMERSON",sex:"M",fisico:18.75,conocimientos:16,entrevista:14,promedioParcial:16.531,beneficio:0,promedioFinal:16.531,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13297",dni:"60027240",nombre:"MALLA RODRIGUEZ YHAN ANTONY",sex:"M",fisico:18.75,conocimientos:16,entrevista:14,promedioParcial:16.531,beneficio:0,promedioFinal:16.531,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10129",dni:"60315575",nombre:"PLACIDO DURAN REQUELMI",sex:"M",fisico:19.75,conocimientos:15,entrevista:14,promedioParcial:16.531,beneficio:0,promedioFinal:16.531,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11048",dni:"60590897",nombre:"BARBOZA DIAZ JHONY MAXIMILIANO",sex:"M",fisico:18,conocimientos:16,entrevista:15,promedioParcial:16.500,beneficio:0,promedioFinal:16.500,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11023",dni:"60988930",nombre:"MUÑOZ CHAVEZ JHONATAN ALEXANDER",sex:"M",fisico:19.75,conocimientos:14.8,entrevista:14,promedioParcial:16.456,beneficio:0,promedioFinal:16.456,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11645",dni:"71841134",nombre:"FERRUA BREÑA FERNANDO ANTONY",sex:"M",fisico:18.25,conocimientos:16.2,entrevista:14,promedioParcial:16.419,beneficio:0,promedioFinal:16.419,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11546",dni:"70695727",nombre:"MACAHUACHI RAMIREZ IMANOL CLEMENTE",sex:"M",fisico:19.25,conocimientos:15.8,entrevista:13,promedioParcial:16.394,beneficio:0,promedioFinal:16.394,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12217",dni:"76938325",nombre:"MENDOZA ACOSTA EDWARD ANDERSON",sex:"M",fisico:18.25,conocimientos:14.8,entrevista:16,promedioParcial:16.394,beneficio:0,promedioFinal:16.394,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10477",dni:"60362016",nombre:"NAVAL TAPIA JHARIY YAREN",sex:"M",fisico:19.75,conocimientos:14.6,entrevista:14,promedioParcial:16.381,beneficio:0,promedioFinal:16.381,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13651",dni:"60911529",nombre:"QUISPE URIARTE ALEX GABRIEL",sex:"M",fisico:19.75,conocimientos:14.6,entrevista:14,promedioParcial:16.381,beneficio:0,promedioFinal:16.381,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11065",dni:"70593233",nombre:"LOILO QUISPE BRIAN JAIR",sex:"M",fisico:20,conocimientos:15,entrevista:13,promedioParcial:16.375,beneficio:0,promedioFinal:16.375,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10685",dni:"74711244",nombre:"MUÑOZ SHAPIAMA FRANCO ALESSANDRO",sex:"M",fisico:18,conocimientos:15,entrevista:16,promedioParcial:16.375,beneficio:0,promedioFinal:16.375,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10867",dni:"60851661",nombre:"ZEVALLOS BACA DEL PIERO DAVID",sex:"M",fisico:20,conocimientos:16.2,entrevista:11,promedioParcial:16.325,beneficio:0,promedioFinal:16.325,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12010",dni:"76734567",nombre:"GUEVARA CIEZA FABRICIO JHARDELL",sex:"M",fisico:20,conocimientos:14.8,entrevista:13,promedioParcial:16.300,beneficio:0,promedioFinal:16.300,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12346",dni:"77693763",nombre:"ATANACIO TOLEDO DIEGO ANTONIO",sex:"M",fisico:20,conocimientos:14.8,entrevista:13,promedioParcial:16.300,beneficio:0,promedioFinal:16.300,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11268",dni:"61140447",nombre:"MONTEZA CABRERA DIEGO ANTHONY",sex:"M",fisico:19.5,conocimientos:14.6,entrevista:14,promedioParcial:16.288,beneficio:0,promedioFinal:16.288,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10021",dni:"71979194",nombre:"VILLUGAS PUENTE JESUS ANGEL",sex:"M",fisico:16.75,conocimientos:16,entrevista:16,promedioParcial:16.281,beneficio:0,promedioFinal:16.281,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11698",dni:"75795505",nombre:"RAMOS USCA ALESSANDO",sex:"M",fisico:18.75,conocimientos:14.6,entrevista:15,promedioParcial:16.256,beneficio:0,promedioFinal:16.256,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11521",dni:"70711403",nombre:"ORTIZ ROMERO CRISTIAN JEFERSON",sex:"M",fisico:20,conocimientos:14.6,entrevista:13,promedioParcial:16.225,beneficio:0,promedioFinal:16.225,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10130",dni:"74478724",nombre:"GUZMAN MEDINA ALEXIS YAEL",sex:"M",fisico:18.5,conocimientos:14.6,entrevista:15,promedioParcial:16.163,beneficio:0,promedioFinal:16.163,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12199",dni:"60871476",nombre:"MEDINA GUEVARA ROBERTO CARLOS",sex:"M",fisico:19,conocimientos:13.4,entrevista:16,promedioParcial:16.150,beneficio:0,promedioFinal:16.150,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11780",dni:"62114458",nombre:"UGAZ YNFANTE LUIS MAYCOL",sex:"M",fisico:18.75,conocimientos:16.2,entrevista:12,promedioParcial:16.106,beneficio:0,promedioFinal:16.106,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10727",dni:"70536429",nombre:"NAYRA HUAMAN YODIR PIERLUIGUI",sex:"M",fisico:18.25,conocimientos:16,entrevista:13,promedioParcial:16.094,beneficio:0,promedioFinal:16.094,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10245",dni:"77068614",nombre:"CALLATA CALLATA MOISES",sex:"M",fisico:18.75,conocimientos:14.8,entrevista:14,promedioParcial:16.081,beneficio:0,promedioFinal:16.081,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10676",dni:"76361842",nombre:"MONTOYA VELASQUEZ ORLANDO",sex:"M",fisico:18.25,conocimientos:14.6,entrevista:15,promedioParcial:16.069,beneficio:0,promedioFinal:16.069,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11339",dni:"61455763",nombre:"HUAMAN MEDINA LUIS EDUARDO",sex:"M",fisico:18.25,conocimientos:14.6,entrevista:15,promedioParcial:16.069,beneficio:0,promedioFinal:16.069,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11747",dni:"61130452",nombre:"SILVA BUENO ISAAC WILLY",sex:"M",fisico:18.5,conocimientos:15,entrevista:14,promedioParcial:16.063,beneficio:0,promedioFinal:16.063,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12317",dni:"77803075",nombre:"YPANAQUE VASQUEZ JOSE ENRIQUE",sex:"M",fisico:18.5,conocimientos:15,entrevista:14,promedioParcial:16.063,beneficio:0,promedioFinal:16.063,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11906",dni:"60774470",nombre:"FLORES RAMOS FABIAN ESTHEFANO",sex:"M",fisico:18.5,conocimientos:16.2,entrevista:12,promedioParcial:16.013,beneficio:0,promedioFinal:16.013,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11967",dni:"77414583",nombre:"ULLOA ÑAHUIRIMA JOHAN DAVID",sex:"M",fisico:19,conocimientos:15,entrevista:13,promedioParcial:16.000,beneficio:0,promedioFinal:16.000,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10851",dni:"60732446",nombre:"CHAMBI CALLACONDO EDDY YOHEL",sex:"M",fisico:15.75,conocimientos:16.2,entrevista:16,promedioParcial:15.981,beneficio:0,promedioFinal:15.981,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11204",dni:"61027897",nombre:"GONZALES DAVILA FRANCISCO",sex:"M",fisico:20,conocimientos:14.6,entrevista:12,promedioParcial:15.975,beneficio:0,promedioFinal:15.975,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11498",dni:"61104154",nombre:"TOLENTINO SINFOROSO LUIS ANGEL",sex:"M",fisico:20,conocimientos:14.6,entrevista:12,promedioParcial:15.975,beneficio:0,promedioFinal:15.975,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12167",dni:"60991180",nombre:"CANO BUENO SONYHU EFRAIN",sex:"M",fisico:20,conocimientos:14.6,entrevista:12,promedioParcial:15.975,beneficio:0,promedioFinal:15.975,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11125",dni:"60800723",nombre:"MESTANZA ALVA JEANCARLOS FELIX",sex:"M",fisico:17.5,conocimientos:15,entrevista:15,promedioParcial:15.938,beneficio:0,promedioFinal:15.938,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10220",dni:"71355827",nombre:"AYMA CALLA CARLOS RAUL",sex:"M",fisico:17.75,conocimientos:14.6,entrevista:15,promedioParcial:15.881,beneficio:0,promedioFinal:15.881,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13596",dni:"77039885",nombre:"COLMENARES VILLANUEVA HERLESS",sex:"M",fisico:17.25,conocimientos:16.4,entrevista:13,promedioParcial:15.869,beneficio:0,promedioFinal:15.869,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10565",dni:"61191064",nombre:"FLORES ABRAMONTE DEYBI BREYNER",sex:"M",fisico:17.5,conocimientos:14.8,entrevista:15,promedioParcial:15.863,beneficio:0,promedioFinal:15.863,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10821",dni:"73192707",nombre:"VEGA SANCHEZ MIJAIL RODRIGO JOSHUA",sex:"M",fisico:18.25,conocimientos:14.6,entrevista:14,promedioParcial:15.819,beneficio:0,promedioFinal:15.819,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12223",dni:"70735438",nombre:"FERNANDEZ VASQUEZ BRAYAN SMITH",sex:"M",fisico:18.25,conocimientos:14.6,entrevista:14,promedioParcial:15.819,beneficio:0,promedioFinal:15.819,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11017",dni:"73342499",nombre:"BURGA COTRINA JHONATAN CRISTOPHER",sex:"M",fisico:17.5,conocimientos:14.6,entrevista:15,promedioParcial:15.788,beneficio:0,promedioFinal:15.788,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13532",dni:"71096917",nombre:"VALVERDE ALEJOS CARLOS GUILLERMO",sex:"M",fisico:17.5,conocimientos:14.6,entrevista:15,promedioParcial:15.788,beneficio:0,promedioFinal:15.788,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10636",dni:"60971412",nombre:"USURIN HERNANDEZ OSCAR FABRIZIO",sex:"M",fisico:17.75,conocimientos:15,entrevista:14,promedioParcial:15.781,beneficio:0,promedioFinal:15.781,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10570",dni:"61030395",nombre:"HUAMAN DE LA CRUZ KENJI MIGUEL",sex:"M",fisico:16.5,conocimientos:16.2,entrevista:14,promedioParcial:15.763,beneficio:0,promedioFinal:15.763,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10054",dni:"62735082",nombre:"PEREZ HUARACA WALTER DANIEL",sex:"M",fisico:16,conocimientos:16,entrevista:15,promedioParcial:15.750,beneficio:0,promedioFinal:15.750,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10895",dni:"70626979",nombre:"OSORIA ENCISO JOSUE SALIM",sex:"M",fisico:19,conocimientos:15,entrevista:12,promedioParcial:15.750,beneficio:0,promedioFinal:15.750,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12727",dni:"61293511",nombre:"MOSTACERO MORENO JOSUE VALENTINO",sex:"M",fisico:20,conocimientos:11.2,entrevista:16,promedioParcial:15.700,beneficio:0,promedioFinal:15.700,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13107",dni:"74432106",nombre:"FERNANDEZ FERNANDEZ JESUS ANDRES",sex:"M",fisico:19.25,conocimientos:14.6,entrevista:12,promedioParcial:15.694,beneficio:0,promedioFinal:15.694,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12082",dni:"73002266",nombre:"MAYTA CARDENAS DANILO JULIANO",sex:"M",fisico:17.25,conocimientos:14.6,entrevista:15,promedioParcial:15.694,beneficio:0,promedioFinal:15.694,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12936",dni:"75840464",nombre:"ZABALETA PEREZ JANS ENSON",sex:"M",fisico:18.5,conocimientos:16,entrevista:11,promedioParcial:15.688,beneficio:0,promedioFinal:15.688,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11030",dni:"70965360",nombre:"SOTO MAMANI CARLOS ANDRES",sex:"M",fisico:19.5,conocimientos:15,entrevista:11,promedioParcial:15.688,beneficio:0,promedioFinal:15.688,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12777",dni:"74325829",nombre:"CRUZ SILVA JESUS ANTONIO ALEXIS",sex:"M",fisico:16.75,conocimientos:15,entrevista:15,promedioParcial:15.656,beneficio:0,promedioFinal:15.656,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10255",dni:"71355842",nombre:"AYMA CALLA CARLOS DANIEL",sex:"M",fisico:18.25,conocimientos:14.8,entrevista:13,promedioParcial:15.644,beneficio:0,promedioFinal:15.644,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13035",dni:"75895904",nombre:"SOSA SANCHEZ HEBERTH SANTIAGO",sex:"M",fisico:19.75,conocimientos:14.6,entrevista:11,promedioParcial:15.631,beneficio:0,promedioFinal:15.631,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12134",dni:"75082519",nombre:"HUANCA VILCHEZ FERNANDO JESUS",sex:"M",fisico:17,conocimientos:16,entrevista:13,promedioParcial:15.625,beneficio:0,promedioFinal:15.625,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10667",dni:"70726498",nombre:"BARRIENTOS CASIMIRO JOSEPH DANIEL",sex:"M",fisico:17.5,conocimientos:14.8,entrevista:14,promedioParcial:15.613,beneficio:0,promedioFinal:15.613,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11331",dni:"60582461",nombre:"CARRASCO HUAMAN HARRY FABIAN",sex:"M",fisico:16.75,conocimientos:14.6,entrevista:15,promedioParcial:15.506,beneficio:0,promedioFinal:15.506,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11622",dni:"70631635",nombre:"CHAVEZ BEDON LUIS IRVING",sex:"M",fisico:16.25,conocimientos:15,entrevista:15,promedioParcial:15.469,beneficio:0,promedioFinal:15.469,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12827",dni:"70954648",nombre:"SANCHEZ HONORIO AMIR HARIF",sex:"M",fisico:16,conocimientos:15,entrevista:15,promedioParcial:15.375,beneficio:0,promedioFinal:15.375,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12896",dni:"74836649",nombre:"MANTILLA SALAZAR TRISTAN RAUL",sex:"M",fisico:14.5,conocimientos:11.8,entrevista:14,promedioParcial:13.363,beneficio:2.000,promedioFinal:15.363,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10278",dni:"76531469",nombre:"CIEZA ESPINOZA JHON ALEXANDER",sex:"M",fisico:16.25,conocimientos:14.6,entrevista:15,promedioParcial:15.319,beneficio:0,promedioFinal:15.319,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12320",dni:"75175133",nombre:"TREVEJO TORRES ALEXANDER PIERO",sex:"M",fisico:20,conocimientos:12,entrevista:13,promedioParcial:15.250,beneficio:0,promedioFinal:15.250,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13366",dni:"77530045",nombre:"PRIETO LOPEZ ALBERT ADRIAN",sex:"M",fisico:15.75,conocimientos:14.8,entrevista:15,promedioParcial:15.206,beneficio:0,promedioFinal:15.206,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10443",dni:"61449357",nombre:"ORTEGA CANALES DUBBER ANTONIO",sex:"M",fisico:15.5,conocimientos:15,entrevista:15,promedioParcial:15.188,beneficio:0,promedioFinal:15.188,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12266",dni:"61118967",nombre:"CASTRO ESCOBEDO MANUEL ARQUIMEDES",sex:"M",fisico:15.5,conocimientos:14.8,entrevista:15,promedioParcial:15.113,beneficio:0,promedioFinal:15.113,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13047",dni:"75389233",nombre:"HERNANDEZ AMEGHINO ALESSANDRO",sex:"M",fisico:15,conocimientos:14.6,entrevista:16,promedioParcial:15.100,beneficio:0,promedioFinal:15.100,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10975",dni:"74813560",nombre:"TEQUE CONTRERAS ESWARD LEANDRO",sex:"M",fisico:15.25,conocimientos:15,entrevista:15,promedioParcial:15.094,beneficio:0,promedioFinal:15.094,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12412",dni:"74916609",nombre:"RAMIREZ CARHUAS RODOLFO MANUEL",sex:"M",fisico:15.5,conocimientos:14.6,entrevista:15,promedioParcial:15.038,beneficio:0,promedioFinal:15.038,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12909",dni:"73529602",nombre:"FLORES LOPEZ ANGEL LUIS",sex:"M",fisico:15.25,conocimientos:14.8,entrevista:15,promedioParcial:15.019,beneficio:0,promedioFinal:15.019,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10427",dni:"70962892",nombre:"NUÑEZ CHAHUAYLA YAIR JEREMY",sex:"M",fisico:20,conocimientos:11.2,entrevista:13,promedioParcial:14.950,beneficio:0,promedioFinal:14.950,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10670",dni:"73046793",nombre:"VASQUEZ SALAZAR WILLIAM",sex:"M",fisico:15,conocimientos:14.8,entrevista:15,promedioParcial:14.925,beneficio:0,promedioFinal:14.925,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10892",dni:"61310160",nombre:"CHOQUEHUANCA CHOQUEHUANCA OMAR",sex:"M",fisico:15,conocimientos:14.8,entrevista:15,promedioParcial:14.925,beneficio:0,promedioFinal:14.925,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13016",dni:"60575201",nombre:"GAVIDIA PEREZ EMERSON JHOEL",sex:"M",fisico:16.25,conocimientos:16.2,entrevista:11,promedioParcial:14.919,beneficio:0,promedioFinal:14.919,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10058",dni:"76866051",nombre:"CHAVEZ MUÑOZ ALVARO FRANCO",sex:"M",fisico:14.75,conocimientos:15,entrevista:15,promedioParcial:14.906,beneficio:0,promedioFinal:14.906,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11742",dni:"61025950",nombre:"SEGURA MONZALVE EDUARDO SMITH",sex:"M",fisico:18,conocimientos:11.6,entrevista:15,promedioParcial:14.850,beneficio:0,promedioFinal:14.850,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10123",dni:"61240262",nombre:"LOZANO VERA RONALD JOSUE",sex:"M",fisico:18.75,conocimientos:12,entrevista:13,promedioParcial:14.781,beneficio:0,promedioFinal:14.781,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11902",dni:"75038435",nombre:"ARELLANO MORALES JOEL JESUS",sex:"M",fisico:18.75,conocimientos:12.6,entrevista:12,promedioParcial:14.756,beneficio:0,promedioFinal:14.756,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11646",dni:"70722921",nombre:"MANRIQUE PEREZ KEVIN AUGUSTO",sex:"M",fisico:14.25,conocimientos:15,entrevista:15,promedioParcial:14.719,beneficio:0,promedioFinal:14.719,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11447",dni:"60870037",nombre:"ALFARO EVARISTO DAYRON AARON",sex:"M",fisico:19,conocimientos:12.2,entrevista:12,promedioParcial:14.700,beneficio:0,promedioFinal:14.700,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13070",dni:"72518613",nombre:"AGUIRRE MELGAREJO JUAN DIONICIO",sex:"M",fisico:13.5,conocimientos:14.8,entrevista:16,promedioParcial:14.613,beneficio:0,promedioFinal:14.613,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11412",dni:"78544543",nombre:"LLIMPE URIOL BENJAMIN WALLAS",sex:"M",fisico:15.75,conocimientos:15.8,entrevista:11,promedioParcial:14.581,beneficio:0,promedioFinal:14.581,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11051",dni:"72614498",nombre:"CORONADO ROJAS JEREMY SEBASTIAN",sex:"M",fisico:14.25,conocimientos:16.6,entrevista:12,promedioParcial:14.569,beneficio:0,promedioFinal:14.569,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13291",dni:"75164913",nombre:"CAMPOS TARRILLO CHRIS JHERICO",sex:"M",fisico:14.25,conocimientos:14.6,entrevista:15,promedioParcial:14.569,beneficio:0,promedioFinal:14.569,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12922",dni:"72456803",nombre:"QUISPE RICRA CARLOS FERNANDO",sex:"M",fisico:13.75,conocimientos:15,entrevista:15,promedioParcial:14.531,beneficio:0,promedioFinal:14.531,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10914",dni:"60750395",nombre:"LAGUA GUTIERREZ JOHAN ANGEL",sex:"M",fisico:13.25,conocimientos:14.8,entrevista:16,promedioParcial:14.519,beneficio:0,promedioFinal:14.519,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13073",dni:"72104866",nombre:"AGUIRRE MELGAREJO FRAN AINER",sex:"M",fisico:13.5,conocimientos:15,entrevista:15,promedioParcial:14.438,beneficio:0,promedioFinal:14.438,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13672",dni:"70593244",nombre:"ALFARO BERNUI ERICK ROLANDO",sex:"M",fisico:13.75,conocimientos:14.6,entrevista:15,promedioParcial:14.381,beneficio:0,promedioFinal:14.381,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10410",dni:"60405607",nombre:"MOLINA CARNERO ELOY JOSUE",sex:"M",fisico:14.25,conocimientos:16,entrevista:12,promedioParcial:14.344,beneficio:0,promedioFinal:14.344,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11166",dni:"60729857",nombre:"LUNA QUISPE EMERSON",sex:"M",fisico:18.5,conocimientos:11.6,entrevista:12,promedioParcial:14.288,beneficio:0,promedioFinal:14.288,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10208",dni:"61127002",nombre:"MEJIA JULON LEX KANCLERK JAHIR",sex:"M",fisico:14,conocimientos:15.8,entrevista:12,promedioParcial:14.175,beneficio:0,promedioFinal:14.175,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10586",dni:"61306436",nombre:"NAULA FRISANCHO ALDAIR",sex:"M",fisico:18.5,conocimientos:11,entrevista:12,promedioParcial:14.063,beneficio:0,promedioFinal:14.063,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10669",dni:"73774316",nombre:"MORA GAMBOA GERSUS LEONARDO",sex:"M",fisico:17.75,conocimientos:11.6,entrevista:11,promedioParcial:13.756,beneficio:0,promedioFinal:13.756,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  // MUJERES — ORDEN Y SEGURIDAD
+  {carnet:"12924",dni:"73590614",nombre:"PUCO BUSTINZA ANA PAULA KAROL",sex:"F",fisico:20,conocimientos:14.6,entrevista:14,promedioParcial:16.475,beneficio:2.000,promedioFinal:18.475,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13132",dni:"73580391",nombre:"SANCHEZ LOPEZ JENNIFER FERNANDA",sex:"F",fisico:20,conocimientos:14.6,entrevista:12,promedioParcial:15.975,beneficio:2.000,promedioFinal:17.975,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13123",dni:"77320919",nombre:"TORRES JAUREGUI GREYSI ISABELA",sex:"F",fisico:19.5,conocimientos:14.8,entrevista:11,promedioParcial:15.613,beneficio:2.000,promedioFinal:17.613,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11283",dni:"74848425",nombre:"GUTIERREZ PANOCCA KATHERINE DIANA",sex:"F",fisico:19,conocimientos:16.2,entrevista:16,promedioParcial:17.200,beneficio:0,promedioFinal:17.200,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10062",dni:"77025845",nombre:"BASILIO MONTALVAN ANGHELINA JENNIFER",sex:"F",fisico:18.25,conocimientos:16.4,entrevista:16,promedioParcial:16.994,beneficio:0,promedioFinal:16.994,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11600",dni:"60129153",nombre:"SANCHEZ HUACAL DANY JHOELY",sex:"F",fisico:19.5,conocimientos:15,entrevista:15,promedioParcial:16.688,beneficio:0,promedioFinal:16.688,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11666",dni:"75374937",nombre:"OLIVEROS FUENTES SAMANTHA NAYELI",sex:"F",fisico:17.25,conocimientos:16.4,entrevista:16,promedioParcial:16.619,beneficio:0,promedioFinal:16.619,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11842",dni:"76650321",nombre:"REVILLA CHOQUE TIFFANY LIZETH",sex:"F",fisico:18.25,conocimientos:16.4,entrevista:14,promedioParcial:16.494,beneficio:0,promedioFinal:16.494,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11594",dni:"60524516",nombre:"MIRANDA LLANCA JHEIDY DAYANA",sex:"F",fisico:20,conocimientos:15,entrevista:13,promedioParcial:16.375,beneficio:0,promedioFinal:16.375,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11110",dni:"61218900",nombre:"PARQUE SARMIENTO YOSELYN DANITZA",sex:"F",fisico:17.5,conocimientos:16,entrevista:15,promedioParcial:16.313,beneficio:0,promedioFinal:16.313,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12844",dni:"63348100",nombre:"TOLEDO GODOY SARAI VALERY",sex:"F",fisico:19,conocimientos:14.8,entrevista:14,promedioParcial:16.175,beneficio:0,promedioFinal:16.175,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13286",dni:"73300931",nombre:"GUTIERREZ YEPEZ LUCERO ESTRELLA",sex:"F",fisico:19,conocimientos:14.8,entrevista:14,promedioParcial:16.175,beneficio:0,promedioFinal:16.175,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11100",dni:"60306501",nombre:"HURTADO GONZALEZ ANGIE OFELIA RIABEL",sex:"F",fisico:17,conocimientos:16,entrevista:15,promedioParcial:16.125,beneficio:0,promedioFinal:16.125,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12631",dni:"61328528",nombre:"SIFUENTES DIAZ BLANCA ELI",sex:"F",fisico:20,conocimientos:15,entrevista:12,promedioParcial:16.125,beneficio:0,promedioFinal:16.125,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13260",dni:"74022346",nombre:"CARRASCO RIOFRIO ERIKA VALENTINA",sex:"F",fisico:17,conocimientos:16.6,entrevista:14,promedioParcial:16.100,beneficio:0,promedioFinal:16.100,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12146",dni:"60469819",nombre:"CONDE CONTRERAS DULCE MARIA BIANNI",sex:"F",fisico:19.25,conocimientos:15,entrevista:13,promedioParcial:16.094,beneficio:0,promedioFinal:16.094,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11853",dni:"77062550",nombre:"MARTOS MAS HEYMY DAYANA",sex:"F",fisico:18.25,conocimientos:14.6,entrevista:15,promedioParcial:16.069,beneficio:0,promedioFinal:16.069,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11943",dni:"61100442",nombre:"SAMPERTIGUE NAVARRO MARIA ANGELICA",sex:"F",fisico:17.5,conocimientos:14.6,entrevista:16,promedioParcial:16.038,beneficio:0,promedioFinal:16.038,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12244",dni:"61328535",nombre:"CERDAN AGUIRRE YEMINA TALITH",sex:"F",fisico:19.75,conocimientos:14.8,entrevista:12,promedioParcial:15.956,beneficio:0,promedioFinal:15.956,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12255",dni:"77694073",nombre:"VASQUEZ CORNEJO ELIZABETH KATERINE",sex:"F",fisico:17.5,conocimientos:15,entrevista:15,promedioParcial:15.938,beneficio:0,promedioFinal:15.938,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11932",dni:"70715833",nombre:"QUISPE QUISPE MICHELLE ANGGIE",sex:"F",fisico:18.25,conocimientos:14.8,entrevista:14,promedioParcial:15.894,beneficio:0,promedioFinal:15.894,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10126",dni:"73315976",nombre:"RAMOS AGUILAR DINA ROSANGELA",sex:"F",fisico:17.5,conocimientos:14.8,entrevista:15,promedioParcial:15.863,beneficio:0,promedioFinal:15.863,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"13453",dni:"60543583",nombre:"MOGOLLON QUEVEDO ANGIE THAIS",sex:"F",fisico:17.75,conocimientos:15,entrevista:14,promedioParcial:15.781,beneficio:0,promedioFinal:15.781,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11615",dni:"77026104",nombre:"PAREJA DE LA CRUZ MAYTE BALVINA",sex:"F",fisico:18,conocimientos:14.6,entrevista:14,promedioParcial:15.725,beneficio:0,promedioFinal:15.725,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12601",dni:"75667509",nombre:"SOTO MORENO DAYANA FERNANDA",sex:"F",fisico:20,conocimientos:11.8,entrevista:15,promedioParcial:15.675,beneficio:0,promedioFinal:15.675,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11956",dni:"61253331",nombre:"QUISPE MERGE YESENIA CANDY",sex:"F",fisico:18.25,conocimientos:14.8,entrevista:13,promedioParcial:15.644,beneficio:0,promedioFinal:15.644,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12614",dni:"75507323",nombre:"VIVANCO HUAMAN ELIZABETH ELIDA",sex:"F",fisico:17.25,conocimientos:16.4,entrevista:12,promedioParcial:15.619,beneficio:0,promedioFinal:15.619,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11971",dni:"74535483",nombre:"FLORES VENTURA JHOSELIN MILAGROS",sex:"F",fisico:15.75,conocimientos:15.8,entrevista:15,promedioParcial:15.581,beneficio:0,promedioFinal:15.581,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"10364",dni:"61051031",nombre:"PULCE URIARTE MARYCRUZ",sex:"F",fisico:16.75,conocimientos:14.8,entrevista:15,promedioParcial:15.581,beneficio:0,promedioFinal:15.581,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12678",dni:"73886049",nombre:"AMAO SILVA YASMINA RUTH",sex:"F",fisico:16,conocimientos:14.6,entrevista:15,promedioParcial:15.225,beneficio:0,promedioFinal:15.225,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"11608",dni:"61090618",nombre:"SANTIVAÑEZ MEZA MISHELL ALISSON",sex:"F",fisico:14.25,conocimientos:16.4,entrevista:14,promedioParcial:14.994,beneficio:0,promedioFinal:14.994,especialidad:"ORDEN Y SEGURIDAD"},
+  {carnet:"12611",dni:"61355086",nombre:"BARRETO SOBRADO CAMILA ANABELLA",sex:"F",fisico:13.5,conocimientos:14.8,entrevista:15,promedioParcial:14.363,beneficio:0,promedioFinal:14.363,especialidad:"ORDEN Y SEGURIDAD"},
+  // MUJERES — INVESTIGACIÓN CRIMINAL
+  {carnet:"13094",dni:"76988850",nombre:"SOLORZANO SALAZAR JOSSELYN SUSANA",sex:"F",fisico:19,conocimientos:14.6,entrevista:15,promedioParcial:16.350,beneficio:2.000,promedioFinal:18.350,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13118",dni:"73827295",nombre:"ALCANTARA TEMOCHE KORAIMA JHOMARA",sex:"F",fisico:17.5,conocimientos:14.6,entrevista:16,promedioParcial:16.038,beneficio:2.000,promedioFinal:18.038,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12510",dni:"75214432",nombre:"GOMEZ ZEGARRA LIZET",sex:"F",fisico:17.5,conocimientos:14.6,entrevista:15,promedioParcial:15.788,beneficio:2.000,promedioFinal:17.788,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13458",dni:"61298053",nombre:"ABARCA MORAN BRITANY TATIANA",sex:"F",fisico:18.75,conocimientos:16.2,entrevista:16,promedioParcial:17.106,beneficio:0,promedioFinal:17.106,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12628",dni:"60056644",nombre:"SALAZAR CABANILLAS KAREN XIOMARA",sex:"F",fisico:19.5,conocimientos:16,entrevista:15,promedioParcial:17.063,beneficio:0,promedioFinal:17.063,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12383",dni:"61027704",nombre:"VASQUEZ ROJAS MAYRA THATIANA",sex:"F",fisico:19.75,conocimientos:14.8,entrevista:16,promedioParcial:16.956,beneficio:0,promedioFinal:16.956,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13389",dni:"61328529",nombre:"SIFUENTES DIAZ BLANCA YAMELI",sex:"F",fisico:19.75,conocimientos:15,entrevista:15,promedioParcial:16.781,beneficio:0,promedioFinal:16.781,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"10574",dni:"63364663",nombre:"LARA ARIAS YADIRA YASEL",sex:"F",fisico:19.75,conocimientos:14.8,entrevista:15,promedioParcial:16.706,beneficio:0,promedioFinal:16.706,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"13315",dni:"74830133",nombre:"VELAPATIÑO ACUÑA ARIANA NEYDI",sex:"F",fisico:19.5,conocimientos:15,entrevista:15,promedioParcial:16.688,beneficio:0,promedioFinal:16.688,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12434",dni:"61494136",nombre:"ZEGARRA GUERRERO KIARA SIMONET",sex:"F",fisico:18.75,conocimientos:16.4,entrevista:14,promedioParcial:16.681,beneficio:0,promedioFinal:16.681,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12664",dni:"60849226",nombre:"GIRALDO PUMA HARUMI SOANGI",sex:"F",fisico:18.75,conocimientos:15,entrevista:16,promedioParcial:16.656,beneficio:0,promedioFinal:16.656,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11951",dni:"74687239",nombre:"MELENDEZ PAREDES MAYELI",sex:"F",fisico:20,conocimientos:16.4,entrevista:12,promedioParcial:16.650,beneficio:0,promedioFinal:16.650,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11834",dni:"71621341",nombre:"CASTILLO LOPEZ ROSA ISABEL",sex:"F",fisico:18,conocimientos:16.2,entrevista:15,promedioParcial:16.575,beneficio:0,promedioFinal:16.575,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"12625",dni:"61172831",nombre:"VALENCIA CUBAS BRESCIA AYMAR",sex:"F",fisico:19,conocimientos:15,entrevista:15,promedioParcial:16.500,beneficio:0,promedioFinal:16.500,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11567",dni:"72900693",nombre:"VALIENTE MEJIA MARIA FERNANDA",sex:"F",fisico:17.75,conocimientos:16.2,entrevista:15,promedioParcial:16.481,beneficio:0,promedioFinal:16.481,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11609",dni:"77567258",nombre:"ENRIQUES LEGUIA BETZABETH YADIRA",sex:"F",fisico:20,conocimientos:15,entrevista:13,promedioParcial:16.375,beneficio:0,promedioFinal:16.375,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11325",dni:"60459311",nombre:"NIETO SOTO CIELO STEYSI",sex:"F",fisico:19.5,conocimientos:14.8,entrevista:14,promedioParcial:16.363,beneficio:0,promedioFinal:16.363,especialidad:"INVESTIGACIÓN CRIMINAL"},
+  {carnet:"11819",dni:"70489099",nombre:"CASAFRANCA LOPEZ FIORELLA GERALDINE",sex:"F",fisico:19.5,conocimientos:14.8,entrevista:14,promedioParcial:16.363,beneficio:0,promedioFinal:16.363,especialidad:"INVESTIGACIÓN CRIMINAL"},
+];
+
+
+// ============================================================
+// PROCESS & VALIDATE
+// ============================================================
+const DATA = RAW
+  .filter(d => d.dni && d.nombre && typeof d.promedioFinal === 'number')
+  .map(d => ({...d, nombre:d.nombre.trim().toUpperCase(), dni:String(d.dni).padStart(8,'0'),
+    promedioFinal:parseFloat(d.promedioFinal)||0, beneficio:parseFloat(d.beneficio)||0}))
+  .filter(d => d.promedioFinal >= 0 && d.promedioFinal <= 20)
+  .sort((a,b) => b.promedioFinal - a.promedioFinal)
+  .map((r,i) => ({...r, globalRank:i+1}));
+
+const MAX_SCORE = DATA[0]?.promedioFinal || 20;
+
+// ============================================================
+// STATE
+// ============================================================
+let filtered    = DATA.slice();
+let page        = 1;
+let perPage     = 20;
+let sortCol     = 'promedioFinal';
+let sortDir     = -1;
+let activeRange = 'all';
+let chartsBuilt = false;
+
+// ============================================================
+// UTILS
+// ============================================================
+const $ = id => document.getElementById(id);
+const debounce = (fn,ms) => { let t; return (...a) => { clearTimeout(t); t=setTimeout(()=>fn(...a),ms); }; };
+
+function scoreColor(s) {
+  if(s>=19) return '#fbbf24';
+  if(s>=18) return '#60a5fa';
+  if(s>=17) return '#34d399';
+  if(s>=16) return '#94a3b8';
+  return '#64748b';
+}
+
+function calcPercentile(d) {
+  return ((DATA.filter(x=>x.promedioFinal<d.promedioFinal).length/DATA.length)*100).toFixed(1);
+}
+
+function toast(msg,type='info') {
+  const el=document.createElement('div');
+  el.className=`toast toast-${type}`;el.textContent=msg;
+  $('toastContainer').appendChild(el);
+  setTimeout(()=>el.remove(),3000);
+}
+
+// ============================================================
+// WELCOME MODAL
+// ============================================================
+function enterApp() {
+  const modal = $('welcomeModal');
+  modal.style.transition='opacity 0.35s ease';
+  modal.style.opacity='0';
+  setTimeout(()=>{
+    modal.style.display='none';
+    $('appContent').style.display='block';
+    buildStats();
+    buildInsights();
+    buildBigStats();
+    buildTop10();
+    setTimeout(()=>{
+      $('skeletonLoader').style.display='none';
+      applyFilters();
+      toast('✓ Datos cargados — '+DATA.length+' postulantes','success');
+    },500);
+  },350);
+  localStorage.setItem('pnp-accepted','1');
+}
+
+// Auto-skip if already accepted
+if(localStorage.getItem('pnp-accepted')){
+  $('welcomeModal').style.display='none';
+  $('appContent').style.display='block';
+}
+
+// ============================================================
+// SECTION NAVIGATION
+// ============================================================
+function showSection(id) {
+  document.querySelectorAll('.section-page').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.toggle('active',t.dataset.section===id));
+  $(id).classList.add('active');
+  if(id==='s2' && !chartsBuilt){ buildCharts(); chartsBuilt=true; }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ============================================================
+// STATS BAR (header)
+// ============================================================
+function buildStats() {
+  const osM=DATA.filter(d=>d.especialidad==='ORDEN Y SEGURIDAD'&&d.sex==='M').length;
+  const osF=DATA.filter(d=>d.especialidad==='ORDEN Y SEGURIDAD'&&d.sex==='F').length;
+  const icM=DATA.filter(d=>d.especialidad==='INVESTIGACIÓN CRIMINAL'&&d.sex==='M').length;
+  const icF=DATA.filter(d=>d.especialidad==='INVESTIGACIÓN CRIMINAL'&&d.sex==='F').length;
+  const avg=(DATA.reduce((s,d)=>s+d.promedioFinal,0)/DATA.length).toFixed(3);
+  const stats=[
+    {num:DATA.length,lbl:'Total postulantes'},
+    {num:osM+icM,lbl:'Varones'},{num:osF+icF,lbl:'Mujeres'},
+    {num:osM+osF,lbl:'Orden y Seguridad'},{num:icM+icF,lbl:'Inv. Criminal'},
+    {num:avg,lbl:'Promedio general'},{num:MAX_SCORE,lbl:'Puntaje máximo'},
+    {num:DATA.filter(d=>d.beneficio>0).length,lbl:'Con beneficio'},
+  ];
+  $('statsBar').innerHTML=stats.map(s=>`<div class="stat-pill"><div class="stat-num">${s.num}</div><div class="stat-lbl">${s.lbl}</div></div>`).join('');
+}
+
+// ============================================================
+// BIG STAT CARDS
+// ============================================================
+function buildBigStats() {
+  const total=DATA.length;
+  const above18=DATA.filter(d=>d.promedioFinal>=18).length;
+  const withBen=DATA.filter(d=>d.beneficio>0).length;
+  const avg=(DATA.reduce((s,d)=>s+d.promedioFinal,0)/total).toFixed(3);
+  const cards=[
+    {cls:'blue',icon:'👥',label:'Total Postulantes',value:total,sub:'Proceso Admisión 2025'},
+    {cls:'green',icon:'✅',label:'Puntaje ≥ 18 pts',value:above18,sub:`${(above18/total*100).toFixed(1)}% del total`},
+    {cls:'gold',icon:'⭐',label:'Promedio General',value:avg,sub:'Puntaje final ponderado'},
+    {cls:'pink',icon:'🎖️',label:'Con Beneficio',value:withBen,sub:`${(withBen/total*100).toFixed(1)}% del total`},
+  ];
+  $('bigStatGrid').innerHTML=cards.map(c=>`
+    <div class="big-stat-card ${c.cls}">
+      <div class="bsc-label">${c.icon} ${c.label}</div>
+      <div class="bsc-value">${c.value}</div>
+      <div class="bsc-sub">${c.sub}</div>
+    </div>`).join('');
+}
+
+// ============================================================
+// INSIGHTS GRID
+// ============================================================
+function buildInsights() {
+  const scores=DATA.map(d=>d.promedioFinal);
+  const avg=scores.reduce((a,b)=>a+b,0)/scores.length;
+  const std=Math.sqrt(scores.reduce((a,b)=>a+(b-avg)**2,0)/scores.length);
+  const top=DATA[0];
+  const withBen=DATA.filter(d=>d.beneficio>0);
+  const avgBon=withBen.reduce((s,d)=>s+d.beneficio,0)/withBen.length;
+  const items=[
+    {label:'Desviación estándar',value:std.toFixed(3),sub:'Variabilidad del proceso'},
+    {label:'Postulantes ≥ 19 pts',value:DATA.filter(d=>d.promedioFinal>=19).length,sub:`${(DATA.filter(d=>d.promedioFinal>=19).length/DATA.length*100).toFixed(1)}% del total`},
+    {label:'Postulantes ≥ 18 pts',value:DATA.filter(d=>d.promedioFinal>=18).length,sub:`${(DATA.filter(d=>d.promedioFinal>=18).length/DATA.length*100).toFixed(1)}% del total`},
+    {label:'Postulantes ≥ 17 pts',value:DATA.filter(d=>d.promedioFinal>=17).length,sub:`${(DATA.filter(d=>d.promedioFinal>=17).length/DATA.length*100).toFixed(1)}% del total`},
+    {label:'Prom. Aptitud Física',value:(DATA.reduce((s,d)=>s+d.fisico,0)/DATA.length).toFixed(2),sub:'Promedio del grupo'},
+    {label:'Prom. Conocimientos',value:(DATA.reduce((s,d)=>s+d.conocimientos,0)/DATA.length).toFixed(2),sub:'Componente académico'},
+    {label:'Prom. Entrevista',value:(DATA.reduce((s,d)=>s+d.entrevista,0)/DATA.length).toFixed(2),sub:'Componente oral'},
+    {label:'Bono promedio',value:`+${avgBon.toFixed(3)}`,sub:`Para los ${withBen.length} beneficiados`},
+    {label:'Líder absoluto',value:top.nombre.split(' ').slice(0,2).join(' '),sub:`${top.promedioFinal.toFixed(3)} pts — ${top.especialidad.includes('ORDEN')?'O&S':'IC'}`},
+    {label:'Puntaje mínimo',value:DATA[DATA.length-1]?.promedioFinal.toFixed(3)||'—',sub:'Último en el ranking'},
+    {label:'O&S Varones',value:DATA.filter(d=>d.especialidad==='ORDEN Y SEGURIDAD'&&d.sex==='M').length,sub:'Orden y Seguridad'},
+    {label:'IC Varones',value:DATA.filter(d=>d.especialidad==='INVESTIGACIÓN CRIMINAL'&&d.sex==='M').length,sub:'Investigación Criminal'},
+  ];
+  $('insightsGrid').innerHTML=items.map(i=>`
+    <div class="insight-card">
+      <div class="insight-label">${i.label}</div>
+      <div class="insight-value">${i.value}</div>
+      <div class="insight-sub">${i.sub}</div>
+    </div>`).join('');
+}
+
+// ============================================================
+// TOP 10
+// ============================================================
+function buildTop10() {
+  $('top10List').innerHTML=DATA.slice(0,10).map((d,i)=>{
+    const posClass=i===0?'p1':i===1?'p2':i===2?'p3':'';
+    const medal=i===0?'🥇':i===1?'🥈':i===2?'🥉':'';
+    return `<div class="top-item">
+      <div class="top-pos ${posClass}">${medal||'#'+(i+1)}</div>
+      <div>
+        <div class="top-name">${d.nombre}</div>
+        <div class="top-meta">${d.especialidad==='ORDEN Y SEGURIDAD'?'Orden y Seguridad':'Investigación Criminal'} · ${d.sex==='M'?'Varón':'Mujer'} · DNI ${d.dni}</div>
+      </div>
+      <div class="top-score">${d.promedioFinal.toFixed(3)}</div>
+    </div>`;
+  }).join('');
+}
+
+// ============================================================
+// CHARTS
+// ============================================================
+function buildCharts() {
+  const isDark=!document.documentElement.classList.contains('light');
+  const gc=isDark?'rgba(255,255,255,0.05)':'rgba(0,0,0,0.06)';
+  const tc=isDark?'#64748b':'#94a3b8';
+  const baseOpts={responsive:true,plugins:{legend:{display:false}},
+    scales:{x:{ticks:{color:tc,font:{size:11,family:'JetBrains Mono'}},grid:{color:gc}},
+            y:{ticks:{color:tc,font:{size:11,family:'JetBrains Mono'}},grid:{color:gc}}}};
+
+  // Distribution
+  const buckets=[[13,14],[14,15],[15,16],[16,17],[17,18],[18,19],[19,20],[20,20.1]];
+  const dLabels=buckets.map(([lo,hi])=>hi>20?'20':`${lo}–${hi}`);
+  const dData=buckets.map(([lo,hi])=>DATA.filter(d=>d.promedioFinal>=lo&&d.promedioFinal<hi).length);
+  if(window._c1) window._c1.destroy();
+  window._c1=new Chart($('chartDist').getContext('2d'),{
+    type:'bar',
+    data:{labels:dLabels,datasets:[{data:dData,backgroundColor:dData.map((_,i)=>`hsla(${215+i*12},75%,${50+i*4}%,0.8)`),borderRadius:5,borderSkipped:false}]},
+    options:{...baseOpts,animation:{duration:800}}
+  });
+
+  // Specialty & gender
+  const eLabels=['O&S Varones','O&S Mujeres','IC Varones','IC Mujeres'];
+  const eData=[
+    DATA.filter(d=>d.especialidad==='ORDEN Y SEGURIDAD'&&d.sex==='M').length,
+    DATA.filter(d=>d.especialidad==='ORDEN Y SEGURIDAD'&&d.sex==='F').length,
+    DATA.filter(d=>d.especialidad==='INVESTIGACIÓN CRIMINAL'&&d.sex==='M').length,
+    DATA.filter(d=>d.especialidad==='INVESTIGACIÓN CRIMINAL'&&d.sex==='F').length,
+  ];
+  if(window._c2) window._c2.destroy();
+  window._c2=new Chart($('chartEsp').getContext('2d'),{
+    type:'bar',
+    data:{labels:eLabels,datasets:[{data:eData,backgroundColor:['rgba(59,130,246,0.75)','rgba(236,72,153,0.75)','rgba(16,185,129,0.75)','rgba(245,158,11,0.75)'],borderRadius:5,borderSkipped:false}]},
+    options:{...baseOpts,animation:{duration:900}}
+  });
+
+  // Component comparison
+  const avgFis=(DATA.reduce((s,d)=>s+d.fisico,0)/DATA.length).toFixed(2);
+  const avgCon=(DATA.reduce((s,d)=>s+d.conocimientos,0)/DATA.length).toFixed(2);
+  const avgEnt=(DATA.reduce((s,d)=>s+d.entrevista,0)/DATA.length).toFixed(2);
+  const avgFis_OS=(DATA.filter(d=>d.especialidad==='ORDEN Y SEGURIDAD').reduce((s,d)=>s+d.fisico,0)/DATA.filter(d=>d.especialidad==='ORDEN Y SEGURIDAD').length).toFixed(2);
+  const avgCon_OS=(DATA.filter(d=>d.especialidad==='ORDEN Y SEGURIDAD').reduce((s,d)=>s+d.conocimientos,0)/DATA.filter(d=>d.especialidad==='ORDEN Y SEGURIDAD').length).toFixed(2);
+  const avgEnt_OS=(DATA.filter(d=>d.especialidad==='ORDEN Y SEGURIDAD').reduce((s,d)=>s+d.entrevista,0)/DATA.filter(d=>d.especialidad==='ORDEN Y SEGURIDAD').length).toFixed(2);
+  const avgFis_IC=(DATA.filter(d=>d.especialidad==='INVESTIGACIÓN CRIMINAL').reduce((s,d)=>s+d.fisico,0)/DATA.filter(d=>d.especialidad==='INVESTIGACIÓN CRIMINAL').length).toFixed(2);
+  const avgCon_IC=(DATA.filter(d=>d.especialidad==='INVESTIGACIÓN CRIMINAL').reduce((s,d)=>s+d.conocimientos,0)/DATA.filter(d=>d.especialidad==='INVESTIGACIÓN CRIMINAL').length).toFixed(2);
+  const avgEnt_IC=(DATA.filter(d=>d.especialidad==='INVESTIGACIÓN CRIMINAL').reduce((s,d)=>s+d.entrevista,0)/DATA.filter(d=>d.especialidad==='INVESTIGACIÓN CRIMINAL').length).toFixed(2);
+
+  if(window._c3) window._c3.destroy();
+  window._c3=new Chart($('chartComp').getContext('2d'),{
+    type:'bar',
+    data:{
+      labels:['Aptitud Física','Conocimientos','Entrevista'],
+      datasets:[
+        {label:'General',data:[avgFis,avgCon,avgEnt],backgroundColor:'rgba(148,163,184,0.7)',borderRadius:4},
+        {label:'O&S',data:[avgFis_OS,avgCon_OS,avgEnt_OS],backgroundColor:'rgba(59,130,246,0.75)',borderRadius:4},
+        {label:'IC',data:[avgFis_IC,avgCon_IC,avgEnt_IC],backgroundColor:'rgba(16,185,129,0.75)',borderRadius:4},
+      ]
+    },
+    options:{
+      responsive:true,animation:{duration:1000},
+      plugins:{legend:{display:true,labels:{color:tc,font:{family:'JetBrains Mono',size:11}}}},
+      scales:{
+        x:{ticks:{color:tc,font:{size:11,family:'JetBrains Mono'}},grid:{color:gc}},
+        y:{ticks:{color:tc,font:{size:11,family:'JetBrains Mono'}},grid:{color:gc},min:0,max:20}
+      }
+    }
+  });
+}
+
+// ============================================================
+// FILTER
+// ============================================================
+function applyFilters() {
+  const q=$('searchInput').value.toLowerCase().trim();
+  const esp=$('filterEsp').value;
+  const sex=$('filterSex').value;
+  const ben=$('filterBen').value;
+  const pts=$('filterPts').value;
+  $('searchClear').classList.toggle('visible',$('searchInput').value.length>0);
+
+  let base=DATA.filter(d=>{
+    if(q&&!d.nombre.toLowerCase().includes(q)&&!d.dni.includes(q)&&!d.carnet.includes(q)) return false;
+    if(esp&&d.especialidad!==esp) return false;
+    if(sex&&d.sex!==sex) return false;
+    if(ben==='yes'&&d.beneficio===0) return false;
+    if(ben==='no'&&d.beneficio>0) return false;
+    if(pts==='19') return d.promedioFinal>=19;
+    if(pts==='18') return d.promedioFinal>=18;
+    if(pts==='17') return d.promedioFinal>=17;
+    if(pts==='u16') return d.promedioFinal<16;
+    return true;
+  });
+
+  if(activeRange==='top10') base=base.slice(0,10);
+  else if(activeRange==='top50') base=base.slice(0,50);
+  else if(activeRange==='18plus') base=base.filter(d=>d.promedioFinal>=18);
+  else if(activeRange==='17to18') base=base.filter(d=>d.promedioFinal>=17&&d.promedioFinal<18);
+  else if(activeRange==='below17') base=base.filter(d=>d.promedioFinal<17);
+
+  base.sort((a,b)=>(a[sortCol]<b[sortCol]?-1:a[sortCol]>b[sortCol]?1:0)*sortDir);
+  filtered=base;page=1;render();
+}
+
+// ============================================================
+// RENDER TABLE
+// ============================================================
+function render() {
+  const total=filtered.length;
+  const pages=Math.max(1,Math.ceil(total/perPage));
+  if(page>pages) page=pages;
+  const start=(page-1)*perPage;
+  const slice=filtered.slice(start,start+perPage);
+
+  $('showingRange').textContent=total?`${start+1}–${Math.min(start+perPage,total)}`:' ';
+  $('totalCount').textContent=total;
+
+  if(!slice.length){
+    $('emptyState').style.display='block';
+    $('tableWrap').style.display='none';
+  } else {
+    $('emptyState').style.display='none';
+    $('tableWrap').style.display='block';
+    $('tableBody').innerHTML=slice.map((d,idx)=>{
+      const pct=(d.promedioFinal/MAX_SCORE*100).toFixed(1);
+      const color=scoreColor(d.promedioFinal);
+      const rk=d.globalRank===1?'rank rank-1':d.globalRank===2?'rank rank-2':d.globalRank===3?'rank rank-3':'rank rank-n';
+      const espB=d.especialidad==='ORDEN Y SEGURIDAD'?'<span class="badge badge-os">O&amp;S</span>':'<span class="badge badge-ic">IC</span>';
+      const sexB=d.sex==='M'?'<span class="badge-m">M</span>':'<span class="badge-f">F</span>';
+      return `<tr class="${d.globalRank<=3?'top3':''}" onclick="openModal('${d.carnet}')" style="animation-delay:${idx*0.025}s" tabindex="0" onkeydown="if(event.key==='Enter')openModal('${d.carnet}')">
+        <td data-label="Pos."><span class="${rk}">${d.globalRank}</span></td>
+        <td data-label="Postulante"><div class="name-main">${d.nombre}</div><div class="name-meta">DNI: ${d.dni} · Carnet: ${d.carnet}</div></td>
+        <td data-label="Sexo">${sexB}</td>
+        <td data-label="Especialidad">${espB}</td>
+        <td data-label="Físico"><span class="score-num">${d.fisico}</span></td>
+        <td data-label="Conoc."><span class="score-num">${d.conocimientos}</span></td>
+        <td data-label="Entrev."><span class="score-num">${d.entrevista}</span></td>
+        <td data-label="P.Parcial"><span class="score-num">${d.promedioParcial.toFixed(3)}</span></td>
+        <td data-label="Beneficio">${d.beneficio>0?`<span class="benefit-tag">+${d.beneficio.toFixed(3)}</span>`:' <span class="no-benefit">—</span>'}</td>
+        <td data-label="P.Final"><div class="score-bar-cell"><div class="score-bar"><div class="score-bar-fill" style="width:${pct}%;background:${color}"></div></div><span class="score-final" style="color:${color}">${d.promedioFinal.toFixed(3)}</span></div></td>
+      </tr>`;
+    }).join('');
+  }
+  buildPagination(pages);
+}
+
+// ============================================================
+// PAGINATION
+// ============================================================
+function buildPagination(pages) {
+  const nav=$('pagination');
+  if(pages<=1){nav.innerHTML='';return;}
+  const range=[];
+  for(let i=1;i<=pages;i++){
+    if(i===1||i===pages||Math.abs(i-page)<=2) range.push(i);
+    else if(range[range.length-1]!=='…') range.push('…');
+  }
+  nav.innerHTML=`<button class="pg-btn" onclick="goPage(${page-1})" ${page===1?'disabled':''}>‹</button>
+    ${range.map(p=>p==='…'?'<span class="pg-btn" style="cursor:default">…</span>'
+      :`<button class="pg-btn ${p===page?'active':''}" onclick="goPage(${p})">${p}</button>`).join('')}
+    <button class="pg-btn" onclick="goPage(${page+1})" ${page===pages?'disabled':''}>›</button>`;
+}
+
+function goPage(p) {
+  const pages=Math.ceil(filtered.length/perPage)||1;
+  if(p<1||p>pages) return;
+  page=p;render();
+  document.querySelector('.table-container').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ============================================================
+// MODAL DETALLE
+// ============================================================
+function openModal(carnet) {
+  const d=DATA.find(x=>x.carnet===carnet);
+  if(!d) return;
+  const pct=calcPercentile(d);
+  const color=scoreColor(d.promedioFinal);
+  $('modalContainer').innerHTML=`
+    <div class="modal-overlay" onclick="closeModal()">
+      <div class="modal-card" onclick="event.stopPropagation()">
+        <div class="modal-top-bar"></div>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        <div class="modal-body">
+          <div class="modal-rank-bg">#${d.globalRank}</div>
+          <h2 class="modal-name">${d.nombre}</h2>
+          <div class="modal-meta-info">DNI: ${d.dni} · Carnet: ${d.carnet}</div>
+          <div class="modal-scores">
+            ${[{l:'Aptitud Física',v:d.fisico,c:'#60a5fa'},{l:'Conocimientos',v:d.conocimientos,c:'#34d399'},{l:'Entrevista',v:d.entrevista,c:'#a78bfa'}].map(s=>`
+              <div class="msi">
+                <div class="msi-label">${s.l}</div>
+                <div class="msi-value" style="color:${s.c}">${s.v}</div>
+                <div class="msi-bar"><div class="msi-bar-fill" style="width:${s.v/20*100}%;background:${s.c}"></div></div>
+              </div>`).join('')}
+          </div>
+          <div class="modal-final-box">
+            <div>
+              <span class="mfb-label">Promedio Final</span>
+              <div class="mfb-score" style="color:${color}">${d.promedioFinal.toFixed(3)}</div>
+              ${d.beneficio>0?`<span class="benefit-tag">Incluye bono +${d.beneficio.toFixed(3)}</span>`:''}
+            </div>
+            <div class="mfb-right">
+              <div class="mfb-pct-lbl">Supera al</div>
+              <div class="mfb-pct">${pct}%</div>
+              <div style="font-size:10px;color:var(--text2)">de postulantes</div>
+            </div>
+          </div>
+          <div class="modal-tags">
+            <span class="${d.especialidad==='ORDEN Y SEGURIDAD'?'badge badge-os':'badge badge-ic'}">${d.especialidad}</span>
+            <span class="${d.sex==='M'?'badge-m':'badge-f'}">${d.sex==='M'?'Varón':'Mujer'}</span>
+            <span class="badge" style="background:rgba(245,158,11,0.15);color:var(--gold2);border:1px solid rgba(245,158,11,0.2)">Posición #${d.globalRank}</span>
+          </div>
+          <div class="modal-btn-row">
+            <button class="btn btn-primary" onclick="closeModal()">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  document.body.style.overflow='hidden';
+}
+function closeModal(){$('modalContainer').innerHTML='';document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+// ============================================================
+// CLEAR SEARCH
+// ============================================================
+function clearSearch(){$('searchInput').value='';$('searchClear').classList.remove('visible');applyFilters();$('searchInput').focus();}
+
+// ============================================================
+// EXPORT CSV
+// ============================================================
+function exportCSV() {
+  if(!filtered.length){toast('No hay datos para exportar','warning');return;}
+  toast('Preparando CSV…','info');
+  const headers=['Posición','Nombre','DNI','Carnet','Sexo','Especialidad','Físico','Conocimientos','Entrevista','Prom.Parcial','Beneficio','Prom.Final'];
+  const rows=filtered.map(d=>[d.globalRank,`"${d.nombre}"`,d.dni,d.carnet,d.sex==='M'?'Varón':'Mujer',`"${d.especialidad}"`,d.fisico,d.conocimientos,d.entrevista,d.promedioParcial.toFixed(3),d.beneficio.toFixed(3),d.promedioFinal.toFixed(3)].join(','));
+  const csv=[headers.join(','),...rows].join('\n');
+  const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download=`PNP_Cuadro_Merito_2025_${filtered.length}registros.csv`;
+  a.click();URL.revokeObjectURL(url);
+  setTimeout(()=>toast(`✓ CSV exportado (${filtered.length} registros)`,'success'),200);
+}
+
+// ============================================================
+// SORT
+// ============================================================
+document.querySelectorAll('thead th[data-col]').forEach(th=>{
+  th.addEventListener('click',()=>{
+    const col=th.dataset.col;
+    if(sortCol===col) sortDir*=-1;
+    else{sortCol=col;sortDir=-1;}
+    document.querySelectorAll('thead th').forEach(h=>{h.classList.remove('sorted');const ic=h.querySelector('.sort-icon');if(ic)ic.textContent='↕';});
+    th.classList.add('sorted');const ic=th.querySelector('.sort-icon');if(ic)ic.textContent=sortDir===1?'↑':'↓';
+    applyFilters();
+  });
+});
+
+// ============================================================
+// CHIPS
+// ============================================================
+document.querySelectorAll('.chip').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    activeRange=chip.dataset.range;applyFilters();
+  });
+});
+
+// ============================================================
+// LISTENERS
+// ============================================================
+const debouncedFilter=debounce(applyFilters,250);
+$('searchInput').addEventListener('input',debouncedFilter);
+$('filterEsp').addEventListener('change',applyFilters);
+$('filterSex').addEventListener('change',applyFilters);
+$('filterBen').addEventListener('change',applyFilters);
+$('filterPts').addEventListener('change',applyFilters);
+$('perPageSel').addEventListener('change',e=>{perPage=+e.target.value;page=1;render();});
+
+// ============================================================
+// THEME
+// ============================================================
+function toggleTheme(){
+  const isLight=document.documentElement.classList.toggle('light');
+  localStorage.setItem('pnp-theme',isLight?'light':'dark');
+  if(chartsBuilt){buildCharts();}
+}
+if(localStorage.getItem('pnp-theme')==='light') document.documentElement.classList.add('light');
+
+// ============================================================
+// INIT — run only when app is visible
+// ============================================================
+if(localStorage.getItem('pnp-accepted')){
+  buildStats();buildInsights();buildBigStats();buildTop10();
+  setTimeout(()=>{$('skeletonLoader').style.display='none';applyFilters();},400);
+}
+</script>
+</body>
+</html>
